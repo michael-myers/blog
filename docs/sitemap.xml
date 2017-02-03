@@ -2,18 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://michael-myers.github.com/blog/post/welcome/</loc>
+    <loc>https://michael-myers.github.io/blog/post/welcome/</loc>
     <lastmod>2017-02-02T23:07:37-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://michael-myers.github.com/blog/</loc>
+    <loc>https://michael-myers.github.io/blog/</loc>
     <lastmod>2017-02-02T23:07:37-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://michael-myers.github.com/blog/post/</loc>
+    <loc>https://michael-myers.github.io/blog/post/</loc>
     <lastmod>2017-02-02T23:07:37-05:00</lastmod>
     <priority>0</priority>
   </url>
