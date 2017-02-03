@@ -63,6 +63,48 @@
             
             <div class="posts">
                 
+                <h1 class="content-subhead">03 Feb 2017, 15:43</h1>
+                <section class="post">
+                    <header class="post-header">
+
+                        <a href="https://michael-myers.github.io/blog/post/static-site-generators/" class="post-title">How to Blog in 2017</a>
+
+                        <p class="post-meta">
+                            
+                            
+                                under 
+                                
+                                <a class="post-category post-category-blogging" href="https://michael-myers.github.io/blog/categories/blogging">blogging</a><a class="post-category post-category-security" href="https://michael-myers.github.io/blog/categories/security">security</a><a class="post-category post-category-web" href="https://michael-myers.github.io/blog/categories/web">web</a>
+                            
+                        </p>
+                    </header>
+
+                    <div class="post-description">
+                        <p>My first blog, back in the early 2000s, was on a hosted blogging platform known as <a href="https://en.wikipedia.org/wiki/Blogger_(service)">Blogger</a>. It was simple and convenient: as the admin you just logged into the Blogger service, edited posts in your browser, and hit publish. This is basically how Tumblr still works today, although Tumblr&rsquo;s innovation was to include media file hosting and allow everyone to repost each others&rsquo; content.</p>
+
+<p>But Blogger content was <em>static</em>, and textual. You could post a few paragraphs of text, and embed images if they were hosted elsewhere. Only later did Google buy out the service and integrate it with their photo-hosting service. In the mid-2000s, many geeks wanted more flexibility, like the ability to limit access to members only, integrate their own photo/video/audio collections, and – most importantly – control the appearance of their blog.</p>
+
+<p>So my second blog was generated with a Web Content Management System (CMS) and self-hosted on a home Windows XP PC running the &ldquo;<a href="https://en.wikipedia.org/wiki/LAMP_%28software_bundle%29#WAMP">WAMP</a>&rdquo; software stack, with a DNS record from a free dynamic DNS service. If you&rsquo;re a system admin or security expert you&rsquo;re probably cringing. I am too. In hindsight, it&rsquo;s a miracle if that PC was not 0wned by a hacker at some point, but at least I have no evidence to believe it was. But I thought my blog was pretty cool, it had a custom look, custom domain name, its own forums, file storage, a weather widget on the sidebar. I believe it was using the <a href="https://en.wikipedia.org/wiki/Drupal">Drupal CMS</a>. The 2000s saw this rise of the &ldquo;web app,&rdquo; a concept that an application was something that ran in a scripting language on a web server and presented you with a web page as the user interface. As a system programmer who thinks an application is a single self-contained compiled binary, I thought this was an anathema. But the rest of the tech world decided otherwise: websites that were not database-backed and server-side-scripted were totally 90s! That meant lame. 90s wasn&rsquo;t cool again yet.</p>
+
+<p>The reason why the self-hosted CMS approach to blogging is cringey is that it is notoriously difficult to secure a CMS, especially one written in PHP. PHP is now known to be prone to reoccuring security issues because of flaws in its design (unvalidated input, access control problems, command injection issues, etc.), and the use of a SQL database means fighting a war agains SQL injection attacks from anyone who uses your site. Spammers will leave spam comments. You just want to run a blog, but now you&rsquo;re a system admin for a web server, a database admin for a database, and you have to understand the PHP (or Java, or whatever) that generates your site on the fly every time a visitor loads a page. If you ever want to use a web hosting service for your CMS-based site instead of hosting it at home, you have to pay real money, because supporting and securing Apache, PHP, and MySQL is a full-time job! On top of all of that, all of this script and database stuff makes the site is slower to load, and prone to Denial of Service attacks.</p>
+
+<p>This is no way to live. And so, as is typical, the tech community decided that what is old is new again, and that static sites were actually a good idea that should never have been abandoned. Rolling my eyes so hard I went temporarily blind, I actually resisted even caring about the cool way to blog in the 2010s. I used LiveJournal for a bit. I tried a hosted Wordpress (Wordpress.com) account to blog about game console emulators. I got into using Tumblr, even though (or maybe <em>because</em>) the tech community is not on there. But now I&rsquo;ve decided to give a fresh look at what&rsquo;s fresh, and give it a chance.</p>
+
+<p>Here are some things I noticed about the current Preferred Way for Cool Kids to Blog.</p>
+
+<ul>
+<li>If you write any kind of code for a living, you host it on a free hosting service in the .io TLD. This is just what is fashionable, and like all fashion choices, it can&rsquo;t really be explained. &ldquo;Everyone is doing it&rdquo;, including this blog. We are not all hosting sites in the British Indian Ocean Territory, but yes, this TLD exists because the UK <a href="https://en.wikipedia.org/wiki/Depopulation_of_Chagossians_from_the_Chagos_Archipelago">stole some Pacific Islanders&rsquo; land</a> during the Cold War, and its only other claim to fame might be <a href="http://content.time.com/time/world/article/0,8599,1828469,00.html">its black site CIA torture prison</a>. How&rsquo;s that for oblivious Silicon Valley tech privilege!</li>
+<li>Because HTML, JS, and CSS are nearly impossible to work in directly anymore (much like assembly code), people write their web page content in a highly simplified markup language, and then run <em>that</em> through a compiler (oh, sorry, <em>static site generator</em>) to produce a web site in actual HTML, JS, and CSS. The output is then posted to a web hosting service. There are some <a href="https://staticsitegenerators.net">450 static site generators</a> to choose from. This site uses Hugo, which I&rsquo;ll talk about in a future post. An even more popular choice is Jekyll, which is fine…for me to poop on.</li>
+<li>The simplified markup language of choice currently is <a href="https://en.wikipedia.org/wiki/Markdown">Markdown</a>, which will also be the subject of a future post because it is pretty neat.</li>
+<li>Because supporting the ability for visitors to post comments would require a dynamic site, static sites have outsourced this responsibility to third-party services. That is, comments are implemented with an embedded JavaScript element that is loaded from a remote service. The dominant choice of service at the moment is <a href="https://en.wikipedia.org/wiki/Disqus">Disqus</a>. This and any other user-account-based service that embeds its content on your blog is a privacy problem: it means Disqus is basically assigning you an identifier and following you around to all of the Disqus-enabled sites you visit. <a href="https://www.ghostery.com">Ghostery</a> blocks Disqus by default, for this reason. I suggest using Twitter to reach me if you have a comment.</li>
+<li>Because static sites cannot track how many visitors they get and where they visited from, that too has been outsourced. <a href="https://en.wikipedia.org/wiki/Google_Analytics">Google Analytics</a> is now more prevalent than HPV and herpes combined. I have had to delete it out of every web-related code repository that I have borrowed to make anything. Even if I&rsquo;m the last one on Earth who cares about privacy, I will not be including that here. The same goes for social media sharing links. You&rsquo;re a big boy and/or girl, I bet you&rsquo;ll figure out how to share a URL yourself!</li>
+</ul>
+
+<p>So there you have it, my take on the Way to Blog in the 2010s for Cool Kids. Thanks for reading. – MM</p>
+
+                    </div>
+                </section>
+                
                 <h1 class="content-subhead">02 Feb 2017, 23:07</h1>
                 <section class="post">
                     <header class="post-header">
