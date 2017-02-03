@@ -1,0 +1,14 @@
+languageCode = "en-us"
+title = "Mike's Blog"
+baseurl = "https://michael-myers.github.com"
+
+# For GitHub Pages deployment via /docs folder on master branch
+publishDir: "docs"
+
+theme = "purehugo"
+[params]  
+  twitterName = "fristle"  
+  githubName = "michael-myers"  
+  description = "Chronicles of my hobby projects and tech experiments"
+  # Hiding the share button on single-post-view, it didn't work anyway?
+  hideShareOptions = true
