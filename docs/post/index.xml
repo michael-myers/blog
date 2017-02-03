@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Mike&#39;s Blog</title>
+    <link>https://michael-myers.github.com/blog/post/index.xml</link>
+    <description>Recent content in Posts on Mike&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 02 Feb 2017 23:07:37 -0500</lastBuildDate>
+    <atom:link href="https://michael-myers.github.com/blog/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Welcome</title>
+      <link>https://michael-myers.github.com/blog/post/welcome/</link>
+      <pubDate>Thu, 02 Feb 2017 23:07:37 -0500</pubDate>
+      
+      <guid>https://michael-myers.github.com/blog/post/welcome/</guid>
+      <description>&lt;p&gt;Welcome to my blog. Here I&amp;rsquo;ll be writing about a variety of tech and business-related topics as I try to explore, experiment, and learn some new skills.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ve been working in computer security since mid-2000, but due to the nature of the work, I have unfortunately published little-to-nothing in the public sphere. As part of a plan to do more &amp;ldquo;giving back,&amp;rdquo; I&amp;rsquo;m starting this blog, and (hopefully) putting out some interesting open-source tools and articles.&lt;/p&gt;
+
+&lt;p&gt;That&amp;rsquo;s all for now, thanks for visiting.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
