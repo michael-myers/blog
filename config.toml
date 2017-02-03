@@ -1,6 +1,6 @@
 languageCode = "en-us"
 title = "Mike's Blog"
-baseurl = "https://michael-myers.github.com/blog/"
+baseurl = "https://michael-myers.github.com/blog"
 
 # For GitHub Pages deployment via /docs folder on master branch
 publishDir = "docs"
