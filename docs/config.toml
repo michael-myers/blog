@@ -3,7 +3,7 @@ title = "Mike's Blog"
 baseurl = "https://michael-myers.github.com"
 
 # For GitHub Pages deployment via /docs folder on master branch
-publishDir: "docs"
+publishDir = "docs"
 
 theme = "purehugo"
 [params]  
