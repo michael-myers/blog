@@ -9,6 +9,154 @@
     <atom:link href="https://michael-myers.github.io/blog/categories/blogging/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>The markup language known as Markdown</title>
+      <link>https://michael-myers.github.io/blog/post/markdown/</link>
+      <pubDate>Sun, 05 Feb 2017 03:05:56 -0500</pubDate>
+      
+      <guid>https://michael-myers.github.io/blog/post/markdown/</guid>
+      <description>
+
+&lt;h2 id=&#34;what-it-is&#34;&gt;What it Is&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Markdown&#34;&gt;Markdown&lt;/a&gt; is a &lt;em&gt;lightweight markup language&lt;/em&gt; (as opposed to a &lt;strong&gt;heavyweight&lt;/strong&gt; one like HTML or LaTeX). If you&amp;rsquo;ve ever taken plain-text file notes and used an asterisk to represent a bullet point, or a line of dashes like an underline for a heading, then you&amp;rsquo;ve basically already written Markdown. Markdown is a natural-looking &amp;ldquo;syntax&amp;rdquo; that lets you turn text like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;## What it is
+[Markdown](https://en.wikipedia.org/wiki/Markdown) is a *lightweight markup language* (as opposed to a **heavyweight** one like HTML or LaTeX).
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;into the HTML+CSS page that you&amp;rsquo;re looking at right now. We&amp;rsquo;ve all known that annoying nerd who refuses to send HTML-formatted emails and insists on sending plain text peppered with slashes and asterisks instead of italics and bold? Yea, basically a guy like that turned it into a semi-official standard, and now instead of being imaginary italics and bold, it actually renders that way.&lt;/p&gt;
+
+&lt;h2 id=&#34;why-not-just-write-in-html-directly&#34;&gt;Why Not Just Write in HTML Directly?&lt;/h2&gt;
+
+&lt;p&gt;I think this is &lt;a href=&#34;http://brettterpstra.com/2011/08/31/why-markdown-a-two-minute-explanation/&#34;&gt;best explained by Brett Terpstra here&lt;/a&gt;. Basically, HTML sucks to work in, if you&amp;rsquo;re just trying to write some content. HTML is tedious, hard on the eyes, and error prone. If you want a site to look good at all, it also needs CSS, and that sucks even worse. Real people don&amp;rsquo;t want to work in either one, they just want to write prose and have it look good. For this, you can use Markdown as a standard format for your thoughts, and then let a static site generator (like Hugo) turn it into a web page. Be a writer, not a website developer, is the thinking.&lt;/p&gt;
+
+&lt;h2 id=&#34;editors&#34;&gt;Editors&lt;/h2&gt;
+
+&lt;p&gt;I went looking for the ideal text editor in which to edit Markdown files. Ideally I could find something that ran on both MacOS and Linux, just for consistency since I use both. But Markdown is a standard format so I would also settle for the best on each respective platform, even if I had to use two different editors.&lt;/p&gt;
+
+&lt;p&gt;If there is one thing that gets reinvented most often, it&amp;rsquo;s text editors. Programmers love to re-solve their own nerd problems rather than tackle real-world problems, and one problem every programmer has is editing text. So there are about 500 choices of text editor at this point, but I narrowed it down to these 7 just on the basis of using them to edit Markdown.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;img/markdownEditors.png&#34; alt=&#34;MarkdownEditors&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;If the job is programming, a text editor should have code-completion and syntax highlighting. But if the job is editing a markup language, WYSIWYG is the number one thing I care about. So you notice I am not even considering the Vims and Emacs of the world. The whole point of Markdown was to be easy: easy for a human to read in its raw state, easy to edit. But I guess I would take this sentiment a little bit further: why should I have to look at markup language at all? It&amp;rsquo;s 2017, shouldn&amp;rsquo;t I have an editor at least as good as WordPad from Windows 95? Of course, I want it to be able to flip back to the raw &amp;ldquo;source&amp;rdquo; markup when necessary, but most of the time I just want to edit it the way it&amp;rsquo;s going to look when I&amp;rsquo;m done.&lt;/p&gt;
+
+&lt;p&gt;This is a surprisingly uncommon feature. It seems that most editors have adopted the two-view or split-window paradigm seen in editors for more complicated markup and typesetting languages like LaTeX. They present the raw Markdown source on the left, and the rendered version on the right. Booooo. The concept of Auto-save, on the other hand, is a ubiquitous feature nowadays. That&amp;rsquo;s great to see.&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;TextNut&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;Typora&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;HarooPad&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;Quiver&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;Atom&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;Sublime&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;Texts&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;WYSIWYG&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;strong&gt;Yes&lt;/strong&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;strong&gt;Yes&lt;/strong&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;No&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;No&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;No&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;No&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;strong&gt;Yes&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Easy to Use&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;strong&gt;Yes&lt;/strong&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;strong&gt;Yes&lt;/strong&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;strong&gt;Yes&lt;/strong&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;strong&gt;Yes&lt;/strong&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;No&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;No&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;strong&gt;Yes&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Both Mac &amp;amp; Linux&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;No&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;strong&gt;Yes&lt;/strong&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;strong&gt;Yes&lt;/strong&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;No&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;strong&gt;Yes&lt;/strong&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;strong&gt;Yes&lt;/strong&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;No&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Free / OSS&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;No ($25)&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;No (Beta)&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;strong&gt;Yes&lt;/strong&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;No ($10)&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;strong&gt;Yes&lt;/strong&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;No ($70)&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;No ($20)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Auto-save&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;strong&gt;Yes&lt;/strong&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;strong&gt;Yes&lt;/strong&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;strong&gt;Yes&lt;/strong&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;strong&gt;Yes&lt;/strong&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;strong&gt;Yes&lt;/strong&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;strong&gt;Yes&lt;/strong&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;strong&gt;Yes&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Work Directly in .md&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;No*&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;strong&gt;Yes&lt;/strong&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;strong&gt;Yes&lt;/strong&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;No*&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;strong&gt;Yes&lt;/strong&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;strong&gt;Yes&lt;/strong&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;strong&gt;Yes&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Leaves TOML Intact&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;strong&gt;Yes&lt;/strong&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;strong&gt;Yes&lt;/strong&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;strong&gt;Yes&lt;/strong&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;Unknown&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;strong&gt;Yes&lt;/strong&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;strong&gt;Yes&lt;/strong&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;No&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;* = TextNut can open and edit a .md file, but the WYSIWYG aspect only works when it is &amp;ldquo;imported&amp;rdquo; to the proprietary format and edited there, then exported back to Markdown. Quiver has similar focus on Notes and a similar weakness in working in .md directly: basically it&amp;rsquo;s a less capable TextNut.&lt;/p&gt;
+
+&lt;p&gt;I like &lt;a href=&#34;http://www.texts.io&#34;&gt;Texts&lt;/a&gt;, but it breaks the &amp;ldquo;front matter&amp;rdquo; on a Hugo post, so that&amp;rsquo;s a deal-breaker. &lt;a href=&#34;http://pad.haroopress.com&#34;&gt;HarooPad&lt;/a&gt;, besides having a lack of  documentation in English and development that has been dead for a couple of years, is pretty robust. If it could only offer WYSIWYG editing I think it would have been my choice.&lt;/p&gt;
+
+&lt;p&gt;So the overall winner for me is &lt;a href=&#34;https://typora.io&#34;&gt;Typora&lt;/a&gt;. Eventually it will leave beta, and they&amp;rsquo;ll charge for it, but hopefully it&amp;rsquo;s something reasonable. Until then, it&amp;rsquo;s free!&lt;/p&gt;
+
+&lt;h2 id=&#34;quicklook-for-md-files-macos&#34;&gt;QuickLook for .md Files (MacOS)&lt;/h2&gt;
+
+&lt;p&gt;I am all about using QuickLook in MacOS. You just hit space bar on a file in Finder and you get a perfectly good read-only peek at the file. But it doesn&amp;rsquo;t handle Markdown (as plain text, let alone as a rendered view). Fortunately &lt;a href=&#34;https://github.com/toland/qlmarkdown/releases&#34;&gt;someone made a QuickLook generator&lt;/a&gt; you can install using Homebrew: &lt;code&gt;brew install Caskroom/cask/qlmarkdown&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Now you&amp;rsquo;re ready to work with Markdown files!&lt;/p&gt;
+
+&lt;h2 id=&#34;it-s-not-all-roses-though-behind-the-scenes-on-this-post&#34;&gt;It&amp;rsquo;s Not All Roses Though: Behind the Scenes on This Post&lt;/h2&gt;
+
+&lt;p&gt;The rendering of your content doesn&amp;rsquo;t &lt;em&gt;always&lt;/em&gt; turn out the way you envisioned. When this happens, it&amp;rsquo;s either your Hugo theme, or the Markdown renderer that is to blame. Unfortunately, this might mean rolling up your sleeves and fixing CSS, as I had to do in order to get the table above to look decent. Hopefully this is a one-time thing. I had to go into the purehugo theme subdirectory, and edit &lt;code&gt;static/all.min.css&lt;/code&gt; within that.&lt;/p&gt;
+
+&lt;p&gt;Secondly, when editing Markdown to embed an image from a local directory (as I&amp;rsquo;ve done above), Hugo requires you to put the files in &lt;code&gt;/static&lt;/code&gt; and then in the Markdown you specify a relative path &lt;em&gt;without&lt;/em&gt; a leading slash, such as &lt;code&gt;![MarkdownEditors](img/markdownEditors.png)&lt;/code&gt; (actual path of the image in the source tree is &lt;code&gt;/blog/static/img/markdownEditors.png&lt;/code&gt;) and Hugo will copy it to the publishdir during rendering. Because of this, you can&amp;rsquo;t actually see the image in your Markdown editor, which sucks, and your source tree will have two copies of the file, which also sucks.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Hugo, the static site generator</title>
       <link>https://michael-myers.github.io/blog/post/hugo/</link>
       <pubDate>Fri, 03 Feb 2017 19:07:12 -0500</pubDate>

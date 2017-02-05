@@ -63,6 +63,166 @@
             
             <div class="posts">
                 
+                <h1 class="content-subhead">05 Feb 2017, 03:05</h1>
+                <section class="post">
+                    <header class="post-header">
+
+                        <a href="https://michael-myers.github.io/blog/post/markdown/" class="post-title">The markup language known as Markdown</a>
+
+                        <p class="post-meta">
+                            
+                            
+                                under 
+                                
+                                <a class="post-category post-category-blogging" href="https://michael-myers.github.io/blog/categories/blogging">blogging</a><a class="post-category post-category-Hugo" href="https://michael-myers.github.io/blog/categories/hugo">Hugo</a>
+                            
+                        </p>
+                    </header>
+
+                    <div class="post-description">
+                        
+
+<h2 id="what-it-is">What it Is</h2>
+
+<p><a href="https://en.wikipedia.org/wiki/Markdown">Markdown</a> is a <em>lightweight markup language</em> (as opposed to a <strong>heavyweight</strong> one like HTML or LaTeX). If you&rsquo;ve ever taken plain-text file notes and used an asterisk to represent a bullet point, or a line of dashes like an underline for a heading, then you&rsquo;ve basically already written Markdown. Markdown is a natural-looking &ldquo;syntax&rdquo; that lets you turn text like this:</p>
+
+<pre><code>## What it is
+[Markdown](https://en.wikipedia.org/wiki/Markdown) is a *lightweight markup language* (as opposed to a **heavyweight** one like HTML or LaTeX).
+</code></pre>
+
+<p>into the HTML+CSS page that you&rsquo;re looking at right now. We&rsquo;ve all known that annoying nerd who refuses to send HTML-formatted emails and insists on sending plain text peppered with slashes and asterisks instead of italics and bold? Yea, basically a guy like that turned it into a semi-official standard, and now instead of being imaginary italics and bold, it actually renders that way.</p>
+
+<h2 id="why-not-just-write-in-html-directly">Why Not Just Write in HTML Directly?</h2>
+
+<p>I think this is <a href="http://brettterpstra.com/2011/08/31/why-markdown-a-two-minute-explanation/">best explained by Brett Terpstra here</a>. Basically, HTML sucks to work in, if you&rsquo;re just trying to write some content. HTML is tedious, hard on the eyes, and error prone. If you want a site to look good at all, it also needs CSS, and that sucks even worse. Real people don&rsquo;t want to work in either one, they just want to write prose and have it look good. For this, you can use Markdown as a standard format for your thoughts, and then let a static site generator (like Hugo) turn it into a web page. Be a writer, not a website developer, is the thinking.</p>
+
+<h2 id="editors">Editors</h2>
+
+<p>I went looking for the ideal text editor in which to edit Markdown files. Ideally I could find something that ran on both MacOS and Linux, just for consistency since I use both. But Markdown is a standard format so I would also settle for the best on each respective platform, even if I had to use two different editors.</p>
+
+<p>If there is one thing that gets reinvented most often, it&rsquo;s text editors. Programmers love to re-solve their own nerd problems rather than tackle real-world problems, and one problem every programmer has is editing text. So there are about 500 choices of text editor at this point, but I narrowed it down to these 7 just on the basis of using them to edit Markdown.</p>
+
+<p><img src="img/markdownEditors.png" alt="MarkdownEditors" /></p>
+
+<p>If the job is programming, a text editor should have code-completion and syntax highlighting. But if the job is editing a markup language, WYSIWYG is the number one thing I care about. So you notice I am not even considering the Vims and Emacs of the world. The whole point of Markdown was to be easy: easy for a human to read in its raw state, easy to edit. But I guess I would take this sentiment a little bit further: why should I have to look at markup language at all? It&rsquo;s 2017, shouldn&rsquo;t I have an editor at least as good as WordPad from Windows 95? Of course, I want it to be able to flip back to the raw &ldquo;source&rdquo; markup when necessary, but most of the time I just want to edit it the way it&rsquo;s going to look when I&rsquo;m done.</p>
+
+<p>This is a surprisingly uncommon feature. It seems that most editors have adopted the two-view or split-window paradigm seen in editors for more complicated markup and typesetting languages like LaTeX. They present the raw Markdown source on the left, and the rendered version on the right. Booooo. The concept of Auto-save, on the other hand, is a ubiquitous feature nowadays. That&rsquo;s great to see.</p>
+
+<table>
+<thead>
+<tr>
+<th align="left"></th>
+<th align="center">TextNut</th>
+<th align="center">Typora</th>
+<th align="center">HarooPad</th>
+<th align="center">Quiver</th>
+<th align="center">Atom</th>
+<th align="center">Sublime</th>
+<th align="center">Texts</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">WYSIWYG</td>
+<td align="center"><strong>Yes</strong></td>
+<td align="center"><strong>Yes</strong></td>
+<td align="center">No</td>
+<td align="center">No</td>
+<td align="center">No</td>
+<td align="center">No</td>
+<td align="center"><strong>Yes</strong></td>
+</tr>
+
+<tr>
+<td align="left">Easy to Use</td>
+<td align="center"><strong>Yes</strong></td>
+<td align="center"><strong>Yes</strong></td>
+<td align="center"><strong>Yes</strong></td>
+<td align="center"><strong>Yes</strong></td>
+<td align="center">No</td>
+<td align="center">No</td>
+<td align="center"><strong>Yes</strong></td>
+</tr>
+
+<tr>
+<td align="left">Both Mac &amp; Linux</td>
+<td align="center">No</td>
+<td align="center"><strong>Yes</strong></td>
+<td align="center"><strong>Yes</strong></td>
+<td align="center">No</td>
+<td align="center"><strong>Yes</strong></td>
+<td align="center"><strong>Yes</strong></td>
+<td align="center">No</td>
+</tr>
+
+<tr>
+<td align="left">Free / OSS</td>
+<td align="center">No ($25)</td>
+<td align="center">No (Beta)</td>
+<td align="center"><strong>Yes</strong></td>
+<td align="center">No ($10)</td>
+<td align="center"><strong>Yes</strong></td>
+<td align="center">No ($70)</td>
+<td align="center">No ($20)</td>
+</tr>
+
+<tr>
+<td align="left">Auto-save</td>
+<td align="center"><strong>Yes</strong></td>
+<td align="center"><strong>Yes</strong></td>
+<td align="center"><strong>Yes</strong></td>
+<td align="center"><strong>Yes</strong></td>
+<td align="center"><strong>Yes</strong></td>
+<td align="center"><strong>Yes</strong></td>
+<td align="center"><strong>Yes</strong></td>
+</tr>
+
+<tr>
+<td align="left">Work Directly in .md</td>
+<td align="center">No*</td>
+<td align="center"><strong>Yes</strong></td>
+<td align="center"><strong>Yes</strong></td>
+<td align="center">No*</td>
+<td align="center"><strong>Yes</strong></td>
+<td align="center"><strong>Yes</strong></td>
+<td align="center"><strong>Yes</strong></td>
+</tr>
+
+<tr>
+<td align="left">Leaves TOML Intact</td>
+<td align="center"><strong>Yes</strong></td>
+<td align="center"><strong>Yes</strong></td>
+<td align="center"><strong>Yes</strong></td>
+<td align="center">Unknown</td>
+<td align="center"><strong>Yes</strong></td>
+<td align="center"><strong>Yes</strong></td>
+<td align="center">No</td>
+</tr>
+</tbody>
+</table>
+
+<p>* = TextNut can open and edit a .md file, but the WYSIWYG aspect only works when it is &ldquo;imported&rdquo; to the proprietary format and edited there, then exported back to Markdown. Quiver has similar focus on Notes and a similar weakness in working in .md directly: basically it&rsquo;s a less capable TextNut.</p>
+
+<p>I like <a href="http://www.texts.io">Texts</a>, but it breaks the &ldquo;front matter&rdquo; on a Hugo post, so that&rsquo;s a deal-breaker. <a href="http://pad.haroopress.com">HarooPad</a>, besides having a lack of  documentation in English and development that has been dead for a couple of years, is pretty robust. If it could only offer WYSIWYG editing I think it would have been my choice.</p>
+
+<p>So the overall winner for me is <a href="https://typora.io">Typora</a>. Eventually it will leave beta, and they&rsquo;ll charge for it, but hopefully it&rsquo;s something reasonable. Until then, it&rsquo;s free!</p>
+
+<h2 id="quicklook-for-md-files-macos">QuickLook for .md Files (MacOS)</h2>
+
+<p>I am all about using QuickLook in MacOS. You just hit space bar on a file in Finder and you get a perfectly good read-only peek at the file. But it doesn&rsquo;t handle Markdown (as plain text, let alone as a rendered view). Fortunately <a href="https://github.com/toland/qlmarkdown/releases">someone made a QuickLook generator</a> you can install using Homebrew: <code>brew install Caskroom/cask/qlmarkdown</code>.</p>
+
+<p>Now you&rsquo;re ready to work with Markdown files!</p>
+
+<h2 id="it-s-not-all-roses-though-behind-the-scenes-on-this-post">It&rsquo;s Not All Roses Though: Behind the Scenes on This Post</h2>
+
+<p>The rendering of your content doesn&rsquo;t <em>always</em> turn out the way you envisioned. When this happens, it&rsquo;s either your Hugo theme, or the Markdown renderer that is to blame. Unfortunately, this might mean rolling up your sleeves and fixing CSS, as I had to do in order to get the table above to look decent. Hopefully this is a one-time thing. I had to go into the purehugo theme subdirectory, and edit <code>static/all.min.css</code> within that.</p>
+
+<p>Secondly, when editing Markdown to embed an image from a local directory (as I&rsquo;ve done above), Hugo requires you to put the files in <code>/static</code> and then in the Markdown you specify a relative path <em>without</em> a leading slash, such as <code>![MarkdownEditors](img/markdownEditors.png)</code> (actual path of the image in the source tree is <code>/blog/static/img/markdownEditors.png</code>) and Hugo will copy it to the publishdir during rendering. Because of this, you can&rsquo;t actually see the image in your Markdown editor, which sucks, and your source tree will have two copies of the file, which also sucks.</p>
+
+                    </div>
+                </section>
+                
                 <h1 class="content-subhead">03 Feb 2017, 19:07</h1>
                 <section class="post">
                     <header class="post-header">

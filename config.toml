@@ -12,3 +12,6 @@ theme = "purehugo"
   description = "Chronicles of my hobby projects and tech experiments"
   # Hiding the share button on single-post-view, it didn't work anyway?
   hideShareOptions = true
+
+[blackfriday]
+  sourceRelativeLinksEval = true
