@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://michael-myers.github.io/blog/post/enigma2017-overflowme-writeup/</loc>
+    <lastmod>2017-02-12T17:52:54-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://michael-myers.github.io/blog/post/enigma2017-broken-encryption-writeup/</loc>
     <lastmod>2017-02-12T13:40:38-05:00</lastmod>
   </url>
@@ -24,6 +29,12 @@
   <url>
     <loc>https://michael-myers.github.io/blog/post/welcome/</loc>
     <lastmod>2017-02-02T23:07:37-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://michael-myers.github.io/blog/tags/aslr/</loc>
+    <lastmod>2017-02-12T17:52:54-05:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -63,19 +74,31 @@
   
   <url>
     <loc>https://michael-myers.github.io/blog/tags/ctf/</loc>
-    <lastmod>2017-02-12T13:40:38-05:00</lastmod>
+    <lastmod>2017-02-12T17:52:54-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://michael-myers.github.io/blog/categories/ctf/</loc>
-    <lastmod>2017-02-12T13:40:38-05:00</lastmod>
+    <lastmod>2017-02-12T17:52:54-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://michael-myers.github.io/blog/tags/enigma2017/</loc>
-    <lastmod>2017-02-12T13:40:38-05:00</lastmod>
+    <lastmod>2017-02-12T17:52:54-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://michael-myers.github.io/blog/tags/exploitation/</loc>
+    <lastmod>2017-02-12T17:52:54-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://michael-myers.github.io/blog/categories/exploitation/</loc>
+    <lastmod>2017-02-12T17:52:54-05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -104,6 +127,18 @@
   </url>
   
   <url>
+    <loc>https://michael-myers.github.io/blog/tags/linux/</loc>
+    <lastmod>2017-02-12T17:52:54-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://michael-myers.github.io/blog/categories/linux/</loc>
+    <lastmod>2017-02-12T17:52:54-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://michael-myers.github.io/blog/tags/markdown/</loc>
     <lastmod>2017-02-05T03:05:56-05:00</lastmod>
     <priority>0</priority>
@@ -111,13 +146,13 @@
   
   <url>
     <loc>https://michael-myers.github.io/blog/</loc>
-    <lastmod>2017-02-12T13:40:38-05:00</lastmod>
+    <lastmod>2017-02-12T17:52:54-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://michael-myers.github.io/blog/post/</loc>
-    <lastmod>2017-02-12T13:40:38-05:00</lastmod>
+    <lastmod>2017-02-12T17:52:54-05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -135,7 +170,7 @@
   
   <url>
     <loc>https://michael-myers.github.io/blog/tags/security/</loc>
-    <lastmod>2017-02-03T15:43:53-05:00</lastmod>
+    <lastmod>2017-02-12T17:52:54-05:00</lastmod>
     <priority>0</priority>
   </url>
   
