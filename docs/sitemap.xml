@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://michael-myers.github.io/blog/post/equity-as-compensation/</loc>
+    <lastmod>2017-02-13T23:41:37-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://michael-myers.github.io/blog/post/enigma2017-overflowme-writeup/</loc>
     <lastmod>2017-02-12T17:52:54-05:00</lastmod>
   </url>
@@ -50,7 +55,25 @@
   </url>
   
   <url>
+    <loc>https://michael-myers.github.io/blog/tags/business/</loc>
+    <lastmod>2017-02-13T23:41:37-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://michael-myers.github.io/blog/categories/business/</loc>
+    <lastmod>2017-02-13T23:41:37-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://michael-myers.github.io/blog/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://michael-myers.github.io/blog/tags/compensation/</loc>
+    <lastmod>2017-02-13T23:41:37-05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -87,6 +110,12 @@
   <url>
     <loc>https://michael-myers.github.io/blog/tags/enigma2017/</loc>
     <lastmod>2017-02-12T17:52:54-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://michael-myers.github.io/blog/tags/equity/</loc>
+    <lastmod>2017-02-13T23:41:37-05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -146,13 +175,13 @@
   
   <url>
     <loc>https://michael-myers.github.io/blog/</loc>
-    <lastmod>2017-02-12T17:52:54-05:00</lastmod>
+    <lastmod>2017-02-13T23:41:37-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://michael-myers.github.io/blog/post/</loc>
-    <lastmod>2017-02-12T17:52:54-05:00</lastmod>
+    <lastmod>2017-02-13T23:41:37-05:00</lastmod>
     <priority>0</priority>
   </url>
   
