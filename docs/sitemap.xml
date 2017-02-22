@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://michael-myers.github.io/blog/post/government-contracting-jargon/</loc>
+    <lastmod>2017-02-21T13:45:59-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://michael-myers.github.io/blog/post/equity-as-compensation/</loc>
     <lastmod>2017-02-13T23:41:37-05:00</lastmod>
   </url>
@@ -56,13 +61,13 @@
   
   <url>
     <loc>https://michael-myers.github.io/blog/tags/business/</loc>
-    <lastmod>2017-02-13T23:41:37-05:00</lastmod>
+    <lastmod>2017-02-21T13:45:59-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://michael-myers.github.io/blog/categories/business/</loc>
-    <lastmod>2017-02-13T23:41:37-05:00</lastmod>
+    <lastmod>2017-02-21T13:45:59-05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -74,6 +79,12 @@
   <url>
     <loc>https://michael-myers.github.io/blog/tags/compensation/</loc>
     <lastmod>2017-02-13T23:41:37-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://michael-myers.github.io/blog/categories/contracting/</loc>
+    <lastmod>2017-02-21T13:45:59-05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -132,6 +143,12 @@
   </url>
   
   <url>
+    <loc>https://michael-myers.github.io/blog/tags/government-contracting/</loc>
+    <lastmod>2017-02-21T13:45:59-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://michael-myers.github.io/blog/tags/hosting/</loc>
     <lastmod>2017-02-03T15:43:53-05:00</lastmod>
     <priority>0</priority>
@@ -175,13 +192,13 @@
   
   <url>
     <loc>https://michael-myers.github.io/blog/</loc>
-    <lastmod>2017-02-13T23:41:37-05:00</lastmod>
+    <lastmod>2017-02-21T13:45:59-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://michael-myers.github.io/blog/post/</loc>
-    <lastmod>2017-02-13T23:41:37-05:00</lastmod>
+    <lastmod>2017-02-21T13:45:59-05:00</lastmod>
     <priority>0</priority>
   </url>
   

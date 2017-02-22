@@ -9,6 +9,123 @@
     <atom:link href="https://michael-myers.github.io/blog/tags/business/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Government Contracting Jargon</title>
+      <link>https://michael-myers.github.io/blog/post/government-contracting-jargon/</link>
+      <pubDate>Tue, 21 Feb 2017 13:45:59 -0500</pubDate>
+      
+      <guid>https://michael-myers.github.io/blog/post/government-contracting-jargon/</guid>
+      <description>
+
+&lt;p&gt;Whether you&amp;rsquo;re just starting work for a business that does federal contracting, or if you&amp;rsquo;ve been doing it for a long time, you know that the contracting and administrative side of the business speaks its own language. Mostly this is the language of &lt;em&gt;federal acquisition&lt;/em&gt;. &lt;em&gt;Acquisition&lt;/em&gt;, here, refers to the process of the government acquiring a product or service from the private sector – also known as procurement. It is defined and codified by Congress in a regulation called the Federal Acquisition Regulation (&lt;a href=&#34;https://en.wikipedia.org/wiki/Federal_Acquisition_Regulation&#34;&gt;FAR&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p&gt;Jargon is nowhere near the hardest part of administrating or operating a successful contracting business, but it is one intimidating factor that can prevent the tech experts working for federal contractors from participating in the leadership roles at their company. So if you get familiar with the terminology of the bureaucracy, you can at least get that out of the way and focus on the difficult parts, like the business plan and the customer relationships. In my experience, those who&amp;rsquo;ve mastered and understood these concepts seem to have no interest in sharing their knowledge. It&amp;rsquo;s almost as if keeping the technical staff in the dark about the administrative functions is what justifies the rigid boss/employee dichotomy.&lt;/p&gt;
+
+&lt;h2 id=&#34;codes-that-register-a-business-with-the-government&#34;&gt;Codes that Register A Business with the Government&lt;/h2&gt;
+
+&lt;h4 id=&#34;duns-number&#34;&gt;DUNS Number&lt;/h4&gt;
+
+&lt;p&gt;A credit bureau for businesses known as Dun &amp;amp; Bradstreet assigns these unique nine-digit identifiers. A DUNS number is used to establish a business credit file, which is often referenced by lenders and potential business partners to help predict the reliability and/or financial stability of the company in question. DUNS stands for &amp;ldquo;Data Universal Numbering System&amp;rdquo; but really it&amp;rsquo;s just a convenient backronym to incorporate the law firm&amp;rsquo;s name. You have to have a DUNS number to bid for federal government contracts. It&amp;rsquo;s free to obtain one, unless you want it expedited.&lt;/p&gt;
+
+&lt;h4 id=&#34;ein-employer-identification-number&#34;&gt;EIN: Employer Identification Number&lt;/h4&gt;
+
+&lt;p&gt;When you register a company with the IRS for tax-filing purposes, you receive one of these EINs. If you&amp;rsquo;ve ever received a W-2 statement as an employee, you&amp;rsquo;ve seen that the EIN for your employer is on the form.&lt;/p&gt;
+
+&lt;h4 id=&#34;sam-system-for-award-management-cage-code&#34;&gt;SAM: System for Award Management / CAGE Code&lt;/h4&gt;
+
+&lt;p&gt;SAM is a fairly new system that replaces several redundant systems that existed previously. Any company that would like to do business with the federal government, or needs to report subcontract information, must register on the System for Award Management (SAM). So after you have an EIN and a DUNS, you can go to the SAM and register, after which you will receive a CAGE Code (Commercial and Government Entity). This is yet another unique identifier for your business, required for any company that does federal contracting. Applying for a CAGE code also requires knowing your NAICS code (see below) that categorizes what your business does. A company&amp;rsquo;s SAM status has to renewed every year, but at least there&amp;rsquo;s no fee.&lt;/p&gt;
+
+&lt;h4 id=&#34;dsbs-dynamic-small-business-search&#34;&gt;DSBS: Dynamic Small Business Search&lt;/h4&gt;
+
+&lt;p&gt;Optional and for small businesses only: there&amp;rsquo;s an additional system to be found by government procurement officers, called the &lt;a href=&#34;http://dsbs.sba.gov/dsbs/search/dsp_dsbs.cfm&#34;&gt;DSBS&lt;/a&gt;. When registering with the SAM system, you can also create a DSBS profile through there.&lt;/p&gt;
+
+&lt;h2 id=&#34;codes-that-categorize-product-service-offerings&#34;&gt;Codes that Categorize Product &amp;amp; Service Offerings&lt;/h2&gt;
+
+&lt;p&gt;In an attempt to standardize purchases, government has come up with multiple (redundant) classification codes. In other words, they&amp;rsquo;ve attempted to create a taxonomy of commoditized goods and services. Like with all taxonomic follies, the inherent assumption here is that all offerings from businesses can &lt;em&gt;be&lt;/em&gt; classified as this or that, or that the whole exercise is useful for anything. In this case, it is supposed to assist government buyers in finding sellers (although this is not really how they find sellers) and it is might assist sellers in determining who is buying a particular thing (although that too does not really work in practice). The more specialized and hi-tech your offering, the less useful it is to try to fit it into a code classification.&lt;/p&gt;
+
+&lt;p&gt;So, choosing your own category codes is dicey, and you should not choose them based purely on your own judgment, but rather what your intended customers are purchasing. If you do some reconnaissance on public databases of past contracts, you can check what codes your competitors have used. Those are probably the ones you will use as well.&lt;/p&gt;
+
+&lt;h4 id=&#34;naics-codes-http-www-naics-com&#34;&gt;&lt;a href=&#34;http://www.naics.com/&#34;&gt;NAICS Codes&lt;/a&gt;&lt;/h4&gt;
+
+&lt;p&gt;There are over 1200 of these &lt;em&gt;North American Industrial Classification System&lt;/em&gt; codes, defined by the Census Bureau or possibly the Office of Management and Budget. This is the categorical bin you&amp;rsquo;re placing your business in. You&amp;rsquo;d choose it &lt;em&gt;based on a careful review of what code your customer buys&lt;/em&gt;, not which one &lt;em&gt;you&lt;/em&gt; think is most appropriate.&lt;/p&gt;
+
+&lt;h4 id=&#34;psc-product-service-codes-http-support-outreachsystems-com-resources-tables-pscs&#34;&gt;&lt;a href=&#34;http://support.outreachsystems.com/resources/tables/pscs/&#34;&gt;PSC: Product Service Codes&lt;/a&gt;&lt;/h4&gt;
+
+&lt;p&gt;These are similar to NAICS codes, but as a categorical bin for the product or service being sold, as opposed to your business itself. There are even more of these: roughly 2300. They are &lt;a href=&#34;https://www.acquisition.gov/service_product_codes.pdf&#34;&gt;defined by the GSA&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Use these codes for research: find bidding opportunities on &lt;a href=&#34;https://www.fbo.gov&#34;&gt;FedBizOpps,&lt;/a&gt; or find past contracts on the Federal Procurement Data System (and the agencies that awarded them). You can also find your competition: the Dynamic Small Business Search, enter in your NAICS or PSC codes.&lt;/p&gt;
+
+&lt;h4 id=&#34;nigp-codes-http-nigp-com&#34;&gt;&lt;a href=&#34;http://nigp.com&#34;&gt;NIGP Codes&lt;/a&gt;&lt;/h4&gt;
+
+&lt;p&gt;NIGP stands for The National Institute of Governmental Purchasing, but it&amp;rsquo;s just another code for categorizing products and services. This one predates NAICS, and is only relevant at the state and local levels, so we&amp;rsquo;ll ignore it here.&lt;/p&gt;
+
+&lt;h2 id=&#34;the-gsa-schedule&#34;&gt;The GSA Schedule&lt;/h2&gt;
+
+&lt;p&gt;GSA is the General Services Administration. The &amp;ldquo;GSA Schedule&amp;rdquo; is like a collection of pre-negotiated prices, sort of an accelerated buying process for commodity goods and services, where the focus is &lt;em&gt;price&lt;/em&gt;. The term itself is a little misleading, as there are actually 39 GSA Schedules categorized by products and services, like schedule 70: IT Services.&lt;/p&gt;
+
+&lt;p&gt;It requires a cumbersome application process that asks you to provide several years of past-performance, and a commitment to sell at least $25k/year of goods or services through this contracting vehicle. &lt;em&gt;Being on the GSA Schedule seems might be a competitive edge for mid-size or larger businesses. But as a small business you&amp;rsquo;d probably just subcontract to one of the 20,000 businesses that are on the GSA Schedule.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;sin-special-item-number&#34;&gt;SIN: Special Item Number&lt;/h4&gt;
+
+&lt;p&gt;Under a particular GSA schedule, there may be subcategories for more specific goods or services. These are identified by SINs, another GSA-provided identifier. So if you are on Schedule 70 (IT) you might be selling a service under the Cloud SIN (132-40) that applies to cloud services, or if you&amp;rsquo;re just consulting maybe you&amp;rsquo;d use the broad &amp;ldquo;IT Professional Services&amp;rdquo; SIN (132-51). As of October 2016 &lt;a href=&#34;https://interact.gsa.gov/document/gsa-it-schedule-70-incorporate-highly-adaptive-cybersecurity-services-sins&#34;&gt;there are even a few SINs for cybersecurity services&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;small-business-set-asides&#34;&gt;Small Business Set-Asides&lt;/h2&gt;
+
+&lt;p&gt;The federal government has a mandate to deliver 23% of its prime contracts to small businesses. Just being a small business means there are opportunities marked for you, but many entrepreneurs also look to certify under an officially recognized disadvantaged status so that they bid for even more exclusive &amp;ldquo;set-asides.&amp;rdquo; Set-asides are federal contracts that restrict bidding to only members of certain qualifying groups. Not only that, but sometimes small businesses can receive sole-source contracts, also known as &lt;em&gt;no-bid&lt;/em&gt; contracts.&lt;/p&gt;
+
+&lt;p&gt;The Small Business Administration (SBA) is an agency of the federal government set up to provide support to entrepreneurs and small businesses, through loan guarantees and these &lt;a href=&#34;https://www.sba.gov/contracting/government-contracting-programs&#34;&gt;special &amp;ldquo;disadvantaged status&amp;rdquo; programs&lt;/a&gt;. The SBA defines most of the disadvantaged-status titles that you see attached to company profiles. &amp;ldquo;Joe&amp;rsquo;s Cyber Shop: a Service-Disabled Veteran-Owned Small Business.&amp;rdquo; There&amp;rsquo;s at least one other status, Veteran-Owned Small Business, that is certified by the Department of Veterans Affairs rather than the SBA.&lt;/p&gt;
+
+&lt;h4 id=&#34;8-a-business-development-program&#34;&gt;8(a) Business Development Program&lt;/h4&gt;
+
+&lt;p&gt;This program (named for a section of the Small Business Act) is for minority groups. An &lt;a href=&#34;https://www.sba.gov/contracting/government-contracting-programs/8a-business-development-program/eligibility-requirements&#34;&gt;eligible&lt;/a&gt; business needs to apply for this status with the SBA, and be certified. Once certified, the SBA offers specialized business training, counseling, marketing assistance, and high-level executive development.&lt;/p&gt;
+
+&lt;h4 id=&#34;hubzone&#34;&gt;HUBZone&lt;/h4&gt;
+
+&lt;p&gt;Historically Underutilized Business Zones (HUBZones). If the company&amp;rsquo;s principal office and 35% or more of its workforce resides in one of these zones, it can receive this other kind of preferential status. There&amp;rsquo;s a &lt;a href=&#34;http://map.sba.gov/hubzone/maps/&#34;&gt;map of these zones&lt;/a&gt; on the SBA site. No it isn&amp;rsquo;t broken; it just really is that slow. Chances are these are not desirable places to move your headquarters &lt;em&gt;and&lt;/em&gt; yourself to, solely for the chance that you might have an edge in competing for contracts. But even if you did relocate, you&amp;rsquo;ll probably lose the status as soon as you make your first hire. You&amp;rsquo;ll be competing for highly skilled individuals to work technical contracts, and you&amp;rsquo;re just not going to find people like that living around a recently closed military base.&lt;/p&gt;
+
+&lt;h2 id=&#34;procurement-terms&#34;&gt;Procurement Terms&lt;/h2&gt;
+
+&lt;p&gt;There are a whole host of terms related to the government&amp;rsquo;s offering of contract opportunities, and the contracting industry&amp;rsquo;s pursuit of them. Quickly, here are some common ones:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;BAA: Broad Agency Announcement. This is how the government solicits for proposals for research and development (specifically). If the government agency is looking for specific products or services rather than basic and/or applied research, then they will issue an RFP instead of a BAA.&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;BD: Business Development. This is a pretty loosely-defined term. If used by an engineer, &amp;ldquo;BD guy&amp;rdquo; might be considered an insult. Sometimes BD is proposal-writing, sometimes it is relationship-buidling.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;COTS: Commercial Off-The-Shelf. This is a term used to refer to anything that can be commercially purchased or is for sale to the general public. Also see GOTS.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;FPDS: the Federal Procurement Data System. This is a database that is intended to be a single source for government-wide procurement data (information about awarded contracts). It&amp;rsquo;s a reporting system. What I&amp;rsquo;ve found is that not all contracts get reported here, so there must be some exceptions. You can use it to recon your competition, but perhaps don&amp;rsquo;t rely on it too much.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;GOTS: Government Off-The-Shelf. As opposed to COTS, something that is GOTS is not for sale to the general public, and typically is developed by the technical staff of one federal agency (or an outside source at their direction), for use by them and/or other government agencies. This is rare, compared to COTS.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;GFP / GFE: Government Furnished Property / Equipment. Any time the government offers its own equipment in order for a contractor to perform a task, it is referred to as GFE. Technically, GFE is a kind of GFP. Another kind of GFP is GFM (Material). You may also see GFI (Information).&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;RFI: Request for Information. This is &lt;em&gt;not&lt;/em&gt; a solicitation for proposals, it&amp;rsquo;s much more preliminary than that. If the government needs more information in order to create a good RFP, then it will put out an RFI. Sometimes the desired response to an RFI is a Capabilities Request: the government occasionally wants to know the available contractors that can perform certain kinds of work. They may use an RFI as a process by which to accept a short (generally 5-10 pages) profile of your company&amp;rsquo;s offerings and qualifications.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;RFP: Request for Proposal. When the government knows its problem (&lt;em&gt;not&lt;/em&gt; basic or applied research) but wants proposals with approaches and prices, then they put out an RFP.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;SoW: Statement of Work. There are many formats and templates for what a SoW must include, but basically it is a list of obligations that the contractor states they will fulfill on the contract.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;WBS: Work Breakdown Structure. This is project manager speak for the work that needs to get done, in outline form. That&amp;rsquo;s it, it&amp;rsquo;s an outline. But listen to this pretentious definition they teach in business school! &amp;ldquo;A hierarchical decomposition of the total scope of work to be carried out by the project team to accomplish the project objectives and create the required deliverables.&amp;rdquo;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;contract-terms&#34;&gt;Contract Terms&lt;/h2&gt;
+
+&lt;p&gt;I&amp;rsquo;ll make another blog post later about contract &lt;em&gt;types&lt;/em&gt;, which is too much to cover here. But there are a few common terms to define up front, related to reading the contracts themselves:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;CDRL: Contract Data Requirements List. This might be specific to military contracts. Some might pronounce it &amp;ldquo;see drill.&amp;rdquo; It is a list of deliverables that the contractor is responsible for producing for the government. It is derived directly from the contractor&amp;rsquo;s Statement of Work in their proposal.&lt;/li&gt;
+&lt;li&gt;CLIN: Contract Line Item Number. CLINs are specified in the FAR part 4.10. I think for the contractor, they are basically just numbers that identify deliverables. On the government side, it&amp;rsquo;s part of an accounting and traceability system.&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;CO: Contracting Officer. This is the government person with the authority to enter into, make changes to, or terminate a govnerment contract. In other words, they have been delegated the authority to represent the government in the contracting process.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;COR: Contracting Officer&amp;rsquo;s Representative. This is a person who helps the CO administer the contract with the performer. The COR is not authorized to make any commitments or obligations on behalf of the government.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;COTR: Contracting Officer&amp;rsquo;s Technical Representative (COTR). A COTR is a particular &lt;em&gt;kind&lt;/em&gt; of COR, designated by the CO to be their technical liason. It&amp;rsquo;s often the case that the CO does not have a sufficient understanding of the specialized work being performed on the contract in order to accurately assess its progress, and this is when they appoint a COTR. Again, the COTR is not authorized to make any commitments or obligations on behalf of the government. Only the CO is.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Evaluating Equity as Compensation</title>
       <link>https://michael-myers.github.io/blog/post/equity-as-compensation/</link>
       <pubDate>Mon, 13 Feb 2017 23:41:37 -0500</pubDate>
