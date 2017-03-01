@@ -134,7 +134,7 @@
 <li>There are no “void” pointers.</li>
 <li>Pointers can not be downcast to a more specific type, only upcast to a more generic type. If generic data structures are needed, you use parameterized types/functions.</li>
 <li>Variables can be allocated on the heap and are cleaned up without the need for “free” or “delete.”</li>
-<li>There can be only one pointer pointing to an allocation, and it is passed back and forth between “owners” such that concurrent access race conditions are impossible. (*EDIT: <a href="https://twitter.com/vitiral">@vitiral</a> clarifies that while there can only be one <strong>mutable</strong> pointer, there can be infinite immutable references*)</li>
+<li>There can be only one pointer pointing to an allocation, and it is passed back and forth between “owners” such that concurrent access race conditions are impossible. (*EDIT: <a href="https://twitter.com/vitiral">@vitiral</a> clarifies that while there can only be one pointer if it&rsquo;s <strong>mutable</strong>, there can be infinite copies of an immuatable reference; however there cannot be both mutable and immutable references to the same allocation*)</li>
 </ul>
 
 <p>If you just wanted a statically typed, compiled language with a modern standard library that is easy to extend, you could also choose Go. But Rust claims to be all of that, plus faster and safer. Rust will work in embedded devices and other spaces currently occupied by C/C++; Go will not. <a href="http://yager.io/programming/go.html">Some think Rust is just fundamentally better</a>, but I am not qualified to judge that.</p>
