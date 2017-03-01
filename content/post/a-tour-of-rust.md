@@ -78,7 +78,7 @@ Just like C/C++, Rust can [be coupled to Python or any other language with a nat
 
 Makefiles are impossible to write and debug, and basically you're always just copy-pasting a previous Makefile into the new one, or hoping an IDE or build tool abstracts away all that crap for you, which is why [this wheel has been reinvented many times](https://en.wikipedia.org/wiki/List_of_build_automation_software). I generally don't have a favorite build tool (they're all bad), since it always seems to come down to a manual troubleshooting cycle of acquiring all the right dependencies. The worst is having a build system that is a big layer cake of scripts on top of XML on top of Makefiles.
 
-Rust package manager "Cargo" simply uses TOML files to describe what a Rust project needs in order to build, and when you build with Cargo, it just goes out and gets those dependencies for you. Plus, the packages are served from Cargo.io, so if you're keeping score that's a double tech hipster bonus for using both the .io domain *and* TOML.
+Rust package manager "Cargo" simply uses TOML files to describe what a Rust project needs in order to build, and when you build with Cargo, it just goes out and gets those dependencies for you. Plus, the packages are served from Crates.io, so if you're keeping score that's a double tech hipster bonus for using both the .io domain *and* TOML.
 
 ## Installation and Hello World
 
