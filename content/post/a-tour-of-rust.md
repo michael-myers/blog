@@ -51,10 +51,19 @@ Having played with Rust for a few days, I can say it will certainly not replace 
 For what it's worth, Rust was the “Most Loved Programming Language of 2016 in the Stack Overflow Developer Survey.” It enforces memory management and safety at compile-time. Some memory safety features of the language include:
 
 - Rust does not permit null pointers or dangling pointers. Since pointers are never NULL, you can always safely dereference a pointer.
+
 - There are no “void” pointers.
+
 - Pointers can not be downcast to a more specific type, only upcast to a more generic type. If generic data structures are needed, you use parameterized types/functions.
+
 - Variables can be allocated on the heap and are cleaned up without the need for “free” or “delete.”
-- There can be only one pointer pointing to an allocation, and it is passed back and forth between “owners” such that concurrent access race conditions are impossible. (*EDIT: [@vitiral](https://twitter.com/vitiral) clarifies that while there can only be one pointer if it's **mutable**, there can be infinite copies of an immuatable reference; however there cannot be both mutable and immutable references to the same allocation*)
+
+- Concurrent-access race conditions are impossible, because every piece of data is either:
+
+  - mutable (reference from a single "owner" at a time, owner re-assigned if needed) ***OR***
+  - immutable (multiple references can exist)
+
+  (*there can be only one mutable reference, or an aribtrary number of immutable references to the same allocation, but never both* [credit: [@vitiral](https://twitter.com/vitiral)])
 
 If you just wanted a statically typed, compiled language with a modern standard library that is easy to extend, you could also choose Go. But Rust claims to be all of that, plus faster and safer. Rust will work in embedded devices and other spaces currently occupied by C/C++; Go will not. [Some think Rust is just fundamentally better](http://yager.io/programming/go.html), but I am not qualified to judge that.
 

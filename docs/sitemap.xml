@@ -53,25 +53,25 @@
   </url>
   
   <url>
-    <loc>https://michael-myers.github.io/blog/tags/blogging/</loc>
-    <lastmod>2017-02-05T03:05:56-05:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://michael-myers.github.io/blog/categories/blogging/</loc>
     <lastmod>2017-02-05T03:05:56-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://michael-myers.github.io/blog/tags/business/</loc>
-    <lastmod>2017-02-21T13:45:59-05:00</lastmod>
+    <loc>https://michael-myers.github.io/blog/tags/blogging/</loc>
+    <lastmod>2017-02-05T03:05:56-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://michael-myers.github.io/blog/categories/business/</loc>
+    <lastmod>2017-02-21T13:45:59-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://michael-myers.github.io/blog/tags/business/</loc>
     <lastmod>2017-02-21T13:45:59-05:00</lastmod>
     <priority>0</priority>
   </url>
@@ -100,25 +100,25 @@
   </url>
   
   <url>
-    <loc>https://michael-myers.github.io/blog/tags/cryptography/</loc>
-    <lastmod>2017-02-12T13:40:38-05:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://michael-myers.github.io/blog/categories/cryptography/</loc>
     <lastmod>2017-02-12T13:40:38-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://michael-myers.github.io/blog/tags/ctf/</loc>
-    <lastmod>2017-02-12T17:52:54-05:00</lastmod>
+    <loc>https://michael-myers.github.io/blog/tags/cryptography/</loc>
+    <lastmod>2017-02-12T13:40:38-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://michael-myers.github.io/blog/categories/ctf/</loc>
+    <lastmod>2017-02-12T17:52:54-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://michael-myers.github.io/blog/tags/ctf/</loc>
     <lastmod>2017-02-12T17:52:54-05:00</lastmod>
     <priority>0</priority>
   </url>
@@ -136,13 +136,13 @@
   </url>
   
   <url>
-    <loc>https://michael-myers.github.io/blog/tags/exploitation/</loc>
+    <loc>https://michael-myers.github.io/blog/categories/exploitation/</loc>
     <lastmod>2017-02-12T17:52:54-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://michael-myers.github.io/blog/categories/exploitation/</loc>
+    <loc>https://michael-myers.github.io/blog/tags/exploitation/</loc>
     <lastmod>2017-02-12T17:52:54-05:00</lastmod>
     <priority>0</priority>
   </url>
@@ -160,13 +160,13 @@
   </url>
   
   <url>
-    <loc>https://michael-myers.github.io/blog/tags/hugo/</loc>
+    <loc>https://michael-myers.github.io/blog/categories/hugo/</loc>
     <lastmod>2017-02-05T03:05:56-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://michael-myers.github.io/blog/categories/hugo/</loc>
+    <loc>https://michael-myers.github.io/blog/tags/hugo/</loc>
     <lastmod>2017-02-05T03:05:56-05:00</lastmod>
     <priority>0</priority>
   </url>
@@ -178,13 +178,13 @@
   </url>
   
   <url>
-    <loc>https://michael-myers.github.io/blog/tags/linux/</loc>
+    <loc>https://michael-myers.github.io/blog/categories/linux/</loc>
     <lastmod>2017-02-12T17:52:54-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://michael-myers.github.io/blog/categories/linux/</loc>
+    <loc>https://michael-myers.github.io/blog/tags/linux/</loc>
     <lastmod>2017-02-12T17:52:54-05:00</lastmod>
     <priority>0</priority>
   </url>
@@ -208,20 +208,14 @@
   </url>
   
   <url>
-    <loc>https://michael-myers.github.io/blog/tags/programming/</loc>
-    <lastmod>2017-02-27T13:06:16-05:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://michael-myers.github.io/blog/categories/programming/</loc>
     <lastmod>2017-02-27T13:06:16-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://michael-myers.github.io/blog/tags/python/</loc>
-    <lastmod>2017-02-12T13:40:38-05:00</lastmod>
+    <loc>https://michael-myers.github.io/blog/tags/programming/</loc>
+    <lastmod>2017-02-27T13:06:16-05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -232,8 +226,8 @@
   </url>
   
   <url>
-    <loc>https://michael-myers.github.io/blog/tags/rust/</loc>
-    <lastmod>2017-02-27T13:06:16-05:00</lastmod>
+    <loc>https://michael-myers.github.io/blog/tags/python/</loc>
+    <lastmod>2017-02-12T13:40:38-05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -244,13 +238,19 @@
   </url>
   
   <url>
-    <loc>https://michael-myers.github.io/blog/tags/security/</loc>
+    <loc>https://michael-myers.github.io/blog/tags/rust/</loc>
     <lastmod>2017-02-27T13:06:16-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://michael-myers.github.io/blog/categories/security/</loc>
+    <lastmod>2017-02-27T13:06:16-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://michael-myers.github.io/blog/tags/security/</loc>
     <lastmod>2017-02-27T13:06:16-05:00</lastmod>
     <priority>0</priority>
   </url>
@@ -279,13 +279,13 @@
   </url>
   
   <url>
-    <loc>https://michael-myers.github.io/blog/tags/web/</loc>
+    <loc>https://michael-myers.github.io/blog/categories/web/</loc>
     <lastmod>2017-02-03T19:07:12-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://michael-myers.github.io/blog/categories/web/</loc>
+    <loc>https://michael-myers.github.io/blog/tags/web/</loc>
     <lastmod>2017-02-03T19:07:12-05:00</lastmod>
     <priority>0</priority>
   </url>

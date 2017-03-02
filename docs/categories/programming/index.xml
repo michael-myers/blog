@@ -65,12 +65,23 @@
 &lt;p&gt;For what it&amp;rsquo;s worth, Rust was the “Most Loved Programming Language of 2016 in the Stack Overflow Developer Survey.” It enforces memory management and safety at compile-time. Some memory safety features of the language include:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Rust does not permit null pointers or dangling pointers. Since pointers are never NULL, you can always safely dereference a pointer.&lt;/li&gt;
-&lt;li&gt;There are no “void” pointers.&lt;/li&gt;
-&lt;li&gt;Pointers can not be downcast to a more specific type, only upcast to a more generic type. If generic data structures are needed, you use parameterized types/functions.&lt;/li&gt;
-&lt;li&gt;Variables can be allocated on the heap and are cleaned up without the need for “free” or “delete.”&lt;/li&gt;
-&lt;li&gt;There can be only one pointer pointing to an allocation, and it is passed back and forth between “owners” such that concurrent access race conditions are impossible. (*EDIT: &lt;a href=&#34;https://twitter.com/vitiral&#34;&gt;@vitiral&lt;/a&gt; clarifies that while there can only be one pointer if it&amp;rsquo;s &lt;strong&gt;mutable&lt;/strong&gt;, there can be infinite copies of an immuatable reference; however there cannot be both mutable and immutable references to the same allocation*)&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Rust does not permit null pointers or dangling pointers. Since pointers are never NULL, you can always safely dereference a pointer.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;There are no “void” pointers.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Pointers can not be downcast to a more specific type, only upcast to a more generic type. If generic data structures are needed, you use parameterized types/functions.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Variables can be allocated on the heap and are cleaned up without the need for “free” or “delete.”&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Concurrent-access race conditions are impossible, because every piece of data is either:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;mutable (reference from a single &amp;ldquo;owner&amp;rdquo; at a time, owner re-assigned if needed) &lt;strong&gt;&lt;em&gt;OR&lt;/em&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;immutable (multiple references can exist)&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;p&gt;(&lt;em&gt;there can be only one mutable reference, or an aribtrary number of immutable references to the same allocation, but never both&lt;/em&gt; [credit: &lt;a href=&#34;https://twitter.com/vitiral&#34;&gt;@vitiral&lt;/a&gt;])&lt;/p&gt;
 
 &lt;p&gt;If you just wanted a statically typed, compiled language with a modern standard library that is easy to extend, you could also choose Go. But Rust claims to be all of that, plus faster and safer. Rust will work in embedded devices and other spaces currently occupied by C/C++; Go will not. &lt;a href=&#34;http://yager.io/programming/go.html&#34;&gt;Some think Rust is just fundamentally better&lt;/a&gt;, but I am not qualified to judge that.&lt;/p&gt;
 
