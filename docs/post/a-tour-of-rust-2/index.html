@@ -3,19 +3,19 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rust &middot; Mike&#39;s Blog</title>
+    <title>A tour of Rust, Pt. 2 &middot; Mike&#39;s Blog</title>
 
-    <meta name="description" content="Chronicles of my hobby projects and tech experiments">
+    <meta name="description" content="A Tour of Rust, Pt. 2">
 
     <meta name="generator" content="Hugo 0.19" />
     <meta name="twitter:card" content="summary">
     
-    <meta name="twitter:title" content="Rust &middot; Mike&#39;s Blog">
-    <meta name="twitter:description" content="Chronicles of my hobby projects and tech experiments">
+    <meta name="twitter:title" content="A tour of Rust, Pt. 2 &middot; Mike&#39;s Blog">
+    <meta name="twitter:description" content="A Tour of Rust, Pt. 2">
 
     <meta property="og:type" content="article">
-    <meta property="og:title" content="Rust &middot; Mike&#39;s Blog">
-    <meta property="og:description" content="Chronicles of my hobby projects and tech experiments">
+    <meta property="og:title" content="A tour of Rust, Pt. 2 &middot; Mike&#39;s Blog">
+    <meta property="og:description" content="A Tour of Rust, Pt. 2">
 
     <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Oxygen:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/pure-min.css">
@@ -62,7 +62,6 @@
         <div>
             
             <div class="posts">
-                
                 <h1 class="content-subhead">20 Mar 2017, 22:56</h1>
                 <section class="post">
                     <header class="post-header">
@@ -78,7 +77,7 @@
                             
                         </p>
                     </header>
-
+                    
                     <div class="post-description">
                         
 
@@ -319,184 +318,9 @@ square = somevalue * somevalue;
 </table>
 
                     </div>
+                    
                 </section>
-                
-                <h1 class="content-subhead">27 Feb 2017, 13:06</h1>
-                <section class="post">
-                    <header class="post-header">
-
-                        <a href="https://michael-myers.github.io/blog/post/a-tour-of-rust/" class="post-title">A Look at the Rust Programming Language</a>
-
-                        <p class="post-meta">
-                            
-                            
-                                under 
-                                
-                                <a class="post-category post-category-programming" href="https://michael-myers.github.io/blog/categories/programming">programming</a><a class="post-category post-category-rust" href="https://michael-myers.github.io/blog/categories/rust">rust</a><a class="post-category post-category-security" href="https://michael-myers.github.io/blog/categories/security">security</a>
-                            
-                        </p>
-                    </header>
-
-                    <div class="post-description">
-                        
-
-<h2 id="where-to-find-more-execution-performance">Where to Find More Execution Performance</h2>
-
-<p>Moore&rsquo;s Law <a href="http://fortune.com/2017/01/05/intel-ces-2017-moore-law/">is just about done</a>. It once described a trend of transistor count doubling every 24 months (enabled by increasing the density of transistors by making them ever-smaller). Now:</p>
-
-<blockquote>
-<p>Between the introduction of 65 nm and 45 nm chips, about 23 months passed. To get from 45 nm to 32 nm took about 27 months, 28 months to go down from there to 22 nm and 30 months to shrink to the current 14 nm process. And that&rsquo;s where Intel has been stuck since September 2014.</p>
-</blockquote>
-
-<p>Intel <em>might</em> release 10nm scale chips in late 2017, which would mean that they worked 36-40 months in order to shrink from 14nm to 10nm scale. In other words, the most recent density doubling (the shrink from 22nm to 10nm), by the time it happens, will have taken over 5 years. The next doubling is likely to take at least that long, assuming the multiple breakthroughs required to do so can even be achieved. 10nm is already fairly close to the atomic scale: ~45 silicon <em>atoms</em> across (one atom: 0.22nm). One of the obstacles at this scale to be addressed is <a href="https://en.wikipedia.org/wiki/Quantum_tunnelling">quantum tunneling</a>, not that I pretend to understand it.</p>
-
-<p>Of course, Moore&rsquo;s Law can be satisfied one other way without changing density, which is to simply use bigger and bigger processor dies. You may have seen charts showing that transistor <em>count</em> continues to increase on schedule with Moore&rsquo;s Law, but this is only true for dedicated GPUs and high-end server CPUs, which are already up against cost practicality limits due to these die sizes.</p>
-
-<p>Even if we were still on track for Moore&rsquo;s Law, increasing transistor counts alone have <a href="https://cartesianproduct.wordpress.com/2013/04/15/the-end-of-dennard-scaling/">provided diminishing returns as of late</a>. Recent density increases have mainly just served to reduce power draw and to make more space on the CPU die dedicated to graphics rendering (an ideal parallelizable task). Tech being an optimistic culture makes it slow to acknowledge the obvious truth here: CPU <em>cores</em> aren&rsquo;t getting significantly faster. Unless your work is on a mobile device or can be delegated to a GPU or server farm, your only performance upgrades since 2010 have been I/O-related ones.</p>
-
-<p>Granted, transistor density improvements have continued to increase CPU power efficiency. But I have a Intel &ldquo;Core i7&rdquo; (2.66 GHz i7-620M, 2-core) laptop that will turn 7 years old in a couple of months, and today&rsquo;s equivalent CPUs <em>still</em> offer only a marginal performance improvement for tasks that aren&rsquo;t 3D graphics. The equivalent CPU today, the Intel &ldquo;Core i7&rdquo; (2.7GHz i7-7500U, 2-core), has single-threaded performance only about 60% better than my CPU from 7 years ago. Not enough to make me throw out my old laptop.</p>
-
-<p>All of this background is to make my point, which is that the next performance leap has to come from improved software, rather than relying on &ldquo;free&rdquo; improvements from new hardware. A few software methods for achieving a generational improvement in performance might be:</p>
-
-<ul>
-<li>Parallelism</li>
-<li>Optimizing compilers</li>
-<li>Moving tasks from interpreted languages back to compiled languages</li>
-</ul>
-
-<p>All of these things are already happening, but it&rsquo;s the last one that I&rsquo;m interested in most.</p>
-
-<h2 id="parallelism">Parallelism</h2>
-
-<p>Parallelism has brought great performance improvements in graphics, &ldquo;AI,&rdquo; and large data set processing (so-called &ldquo;Big Data&rdquo;), and is the reason why GPUs <a href="https://en.wikipedia.org/wiki/Transistor_count#GPUs">continue to march forward in transistor count</a> (although, again, check out those increasing die sizes; those are approaching their own limits of practicality). The problem with parallelism, though, is that while there are some workloads that are naturally suited to it, others aren&rsquo;t and never will be. Sometimes, computing Task B is dependent on the outcome of Task A, and there is just no way to split up Task A. Even when parts of a task <em>can</em> be parallelized, there are swiftly diminishing returns to adding more cores, as described <a href="https://en.wikipedia.org/wiki/Amdahl%27s_law">by Amdahl&rsquo;s Law</a>. What parallelized processing <em>does</em> scale well for <a href="https://en.wikipedia.org/wiki/Gustafson%27s_law">is large data sets</a>, although the home user is not typically handling large data sets, and won&rsquo;t directly benefit from this kind of parallelism.</p>
-
-<h2 id="optimizing-compilers">Optimizing Compilers</h2>
-
-<p>Here are <a href="https://cr.yp.to/talks/2015.04.16/slides-djb-20150416-a4.pdf">Daniel J Bernstein&rsquo;s 2015 slides</a> about the death of &ldquo;optimizing compilers,&rdquo; or rather, that despite all the hype about them, we are still manually tuning the performance critical portions of our programs. The optimizing compilers&rsquo; optimization of non-critical code portions is irrelevant, or at least not worth the effort put into optimizing compilers. It appears that a compiler to generically optimize any code as well as an expert human could, would require something like a <a href="https://en.wikipedia.org/wiki/Artificial_general_intelligence">general AI</a> with a full contextual understanding of the problem being solved by the code. Such a thing doesn&rsquo;t exist, and is not on the horizon.</p>
-
-<h2 id="better-safer-compiled-languages">Better (Safer) Compiled Languages</h2>
-
-<p>C and C++ never really left us, and neither have all of the inherent memory errors in code programmed in C and C++. That includes Java, whose runtime is still written in C. The Java runtime has been the source of many &ldquo;Java&rdquo; security issues over the years, to the point where the Java plug-in was effectively banned from all web browsers. Despite that, the rest of the browser is also written in C and C++, and just as prone to these problems. There hasn&rsquo;t been any viable alternative but to try to sandbox and privilege-reduce the browser, because any safer language is too slow.</p>
-
-<p>The real cost of C and C++ &rsquo;s performance is their high maintenance burdens: coding in them means always opening up subtle concurrency errors, memory corruption bugs, and information leak vulnerabilities. This is why simply improving the C++ standard library and adding more and more features to the language has not altered its basic value proposition to developers, who have already fled to &ldquo;safe&rdquo; languages.</p>
-
-<p>That&rsquo;s where the experimental language, Rust, comes in. It&rsquo;s a compiled systems programming language with performance on par with (<a href="http://benchmarksgame.alioth.debian.org/u64q/which-programs-are-fastest.html">or better than</a>) C++, but with compile-time restrictions on memory management and concurrency that should prevent entire classes of bugs. At some point in the next 5 years, I predict that we will see Rust (or something like it, whether it&rsquo;s <a href="https://en.wikipedia.org/wiki/Swift_(programming_language)">Swift</a> or some new really strict C++ compiler) slowly start replacing C/C++ wherever performance and security are both primary concerns. It&rsquo;s exciting to think that a well-designed compiled language could solve most of the reasons for the ~20-year flight away from native code programming.</p>
-
-<p>Having played with Rust for a few days, I can say it will certainly not replace Python for <em>ease</em> of development, but it&rsquo;s a really interesting disruptor for anyone writing native code. Security researchers should also take notice.</p>
-
-<h2 id="rust-programming-language">Rust Programming Language</h2>
-
-<p>For what it&rsquo;s worth, Rust was the “Most Loved Programming Language of 2016 in the Stack Overflow Developer Survey.” It enforces memory management and safety at compile-time. Some memory safety features of the language include:</p>
-
-<ul>
-<li><p>Rust does not permit null pointers or dangling pointers. Since pointers are never NULL, you can always safely dereference a pointer.</p></li>
-
-<li><p>There are no “void” pointers.</p></li>
-
-<li><p>Pointers can not be downcast to a more specific type, only upcast to a more generic type. If generic data structures are needed, you use parameterized types/functions.</p></li>
-
-<li><p>Variables can be allocated on the heap and are cleaned up without the need for “free” or “delete.”</p></li>
-
-<li><p>Concurrent-access race conditions are impossible, because every piece of data is either:</p>
-
-<ul>
-<li>mutable (reference from a single &ldquo;owner&rdquo; at a time, owner re-assigned if needed) <strong><em>OR</em></strong></li>
-<li>immutable (multiple references can exist)</li>
-</ul></li>
-</ul>
-
-<p>(<em>there can be only one mutable reference, or an aribtrary number of immutable references to the same allocation, but never both</em> [credit: <a href="https://twitter.com/vitiral">@vitiral</a>])</p>
-
-<p>If you just wanted a statically typed, compiled language with a modern standard library that is easy to extend, you could also choose Go. But Rust claims to be all of that, plus faster and safer. Rust will work in embedded devices and other spaces currently occupied by C/C++; Go will not. <a href="http://yager.io/programming/go.html">Some think Rust is just fundamentally better</a>, but I am not qualified to judge that.</p>
-
-<h3 id="rust-and-parallelism">Rust and parallelism</h3>
-
-<p>Rust makes parallelization an integral part of the language, with support for all of the necessary parallel programming primitives. Parallelized versions of various programming constructs can be swapped in without changing your existing code. This is possible because the Rust language forces the programmer to specify more about how data will be used, which prevents race conditions at runtime by turning them into errors at compile time, instead.</p>
-
-<h3 id="concept-of-ownership-in-rust">Concept of &ldquo;Ownership&rdquo; in Rust</h3>
-
-<p>The major innovation of the Rust language (inspired by a prior language, &ldquo;Cyclone&rdquo;) is that its compiler, in order to do memory management and prevent race conditions at compile time, tracks &ldquo;ownership&rdquo; of all variables in the code. Once a variable is used (like in a call to a function) it is considered to be passed to a new &ldquo;owner,&rdquo; and using it in a subsequent statement is illegal and would trigger a compiler error. If the developer&rsquo;s intention was to copy-on-use (&ldquo;clone&rdquo;), they must specify that in their code. For certain simple data types (integers, etc.), they are automatically copied-on-use without any explicit intent from the developer. Another aspect of ownership in Rust is that all variables are (what in C/C++ would be called) <code>const</code>, by default. In Rust, if you want a variable to be mutable, it has to be explicitly stated in the declaration.</p>
-
-<p>This concept is the foundation of the Rust language. It&rsquo;s hard to grasp at first, since it is very different from programming in C or C++, or even Java. The most detailed explanation of Rust ownership that I&rsquo;ve seen is <a href="https://chrismorgan.info/blog/rust-ownership-the-hard-way.html">this article by Chris Morgan</a>, but to actually learn the concept I&rsquo;d recommend starting with <a href="http://intorust.com/tutorial/ownership/">this 25 minute video by Nikolas Matsakis</a>.</p>
-
-<p>At first, it seems like another mental burden on the programmer, but adopting this concept of memory management means the programmer is also <em>relieved</em> of having to manage memory with carefully paired calls to <code>malloc()</code> and <code>free()</code> (or <code>new</code> and <code>delete</code>). &ldquo;So what, isn&rsquo;t this what you get with C# or Java?&rdquo; Not quite: those languages use a Garbage Collector to track references to data at <em>runtime</em>, which has an inherent performance overhead and whose &ldquo;stop-the-world&rdquo; resource management can be <a href="http://stackoverflow.com/questions/16695874/why-does-the-jvm-full-gc-need-to-stop-the-world">inconsistent and unpredictable</a>. Rust does it in the language, at compile time. <em>So, without the use of a Garbage Collector, Rust makes memory management (and concurrent access to data) safe again.</em></p>
-
-<h3 id="rust-is-a-drop-in-replacement-for-c">Rust is a Drop-In Replacement for C</h3>
-
-<p>Just like C/C++, Rust can <a href="https://blog.sentry.io/2016/10/19/fixing-python-performance-with-rust">be coupled to Python or any other language with a native interface, in order to leverage the strengths of both</a>. And, debugging Rust programs is officially <a href="https://www.mail-archive.com/info-gnu@gnu.org/msg02192.html">supported by GDB</a>. This works the other way around too, i.e., you can build a Rust program on top of native code libraries written in C/C++. Mozilla is even working on <a href="https://servo.org">a web browser engine in Rust</a>, to replace Gecko, the Firefox engine. <a href="https://www.phoronix.com/scan.php?page=news_item&amp;px=MTgzNDA">Benchmarks in 2014</a> showed a 300% increase in performance vs Gecko, and by early 2016, it was <a href="https://www.phoronix.com/scan.php?page=news_item&amp;px=Google-Servo-Perf-Comparison">beating Webkit and Chrome as well</a> (at least in some hand-picked benchmarks where they leverage Rust&rsquo;s ease of parallelism to delegate a bunch of stuff to the GPU). If you&rsquo;re interested in the details of how Rust can improve browser engines, Mozilla <a href="https://arxiv.org/pdf/1505.07383v1.pdf">wrote about it here</a>. Buried in the paper is a detail that they seem to have downplayed elsewhere, though: the new browser engine is actually still bootstrapped by an existing codebase, so it&rsquo;s still 75% C/C++ code. On the other hand, that also goes to show how Rust integrates well with C/C++.</p>
-
-<h3 id="rust-has-a-package-manager-which-is-also-its-build-tool">Rust has a Package Manager, which is also its Build Tool</h3>
-
-<p>Makefiles are impossible to write and debug, and basically you&rsquo;re always just copy-pasting a previous Makefile into the new one, or hoping an IDE or build tool abstracts away all that crap for you, which is why <a href="https://en.wikipedia.org/wiki/List_of_build_automation_software">this wheel has been reinvented many times</a>. I generally don&rsquo;t have a favorite build tool (they&rsquo;re all bad), since it always seems to come down to a manual troubleshooting cycle of acquiring all the right dependencies. The worst is having a build system that is a big layer cake of scripts on top of XML on top of Makefiles.</p>
-
-<p>Rust package manager &ldquo;Cargo&rdquo; simply uses TOML files to describe what a Rust project needs in order to build, and when you build with Cargo, it just goes out and gets those dependencies for you. Plus, the packages are served from Crates.io, so if you&rsquo;re keeping score that&rsquo;s a double tech hipster bonus for using both the .io domain <em>and</em> TOML.</p>
-
-<h2 id="installation-and-hello-world">Installation and Hello World</h2>
-
-<p>Assuming you&rsquo;re using MacOS like me (there is plenty of info out there already for Windows and Linux users) and you have Homebrew:</p>
-
-<pre><code class="language-sh">    $ brew install rust
-    $ rustc --version
-    rustc 1.15.0
-</code></pre>
-
-<p>You probably want an editor with Rust syntax highlighting and code completion. <a href="https://areweideyet.com">These are your choices</a>. I went with Visual Studio Code, aka VS Code. It&rsquo;s not what I&rsquo;d call an IDE, and I still haven&rsquo;t gotten it to integrate with a debugger, but hopefully JetBrains will step up and make a Rust IDE – once there is a market for it.</p>
-
-<p>VS Code doesn&rsquo;t understand Rust out of the box. Launching VS Code, hit Command-P to open the in-app console:</p>
-
-<pre><code>ext install vscode-rust
-(install the top search result, should be the extension by kalitaalexey)
-</code></pre>
-
-<p>Optionally, you can install a GDB/LLDB integration layer to attempt to debug from VS Code (in theory – YMMV but I haven&rsquo;t gotten it to work for LLDB with C++ yet, let alone Rust):</p>
-
-<pre><code>ext install webfreak.debug
-(install the top search result)
-</code></pre>
-
-<p>Notice in the bottom right: “Rust tools are missing” … click install. It will invoke Cargo (the Rust package manager) to download, compile, and install more of the Rust toolchain for you: racer, rustfmt, rustsym, etc. And all of the dependencies for those. Go have a coffee, this will take a while. About 18 minutes on my system.</p>
-
-<p>Finally: close VS Code, and open up Terminal so we can put all these new Rust binaries on your $PATH.</p>
-
-<pre><code>$ open -a /Applications/TextEdit.app ~/.bash_profile
-</code></pre>
-
-<p>Add the line <code>export PATH=&quot;/Users/yourusername/.cargo/bin:$PATH&quot;</code> and save.</p>
-
-<p>Open a new instance of VS Code. It should no longer tell you that Rust tools are missing. 👍🏻</p>
-
-<p>Test the environment with a Hello World in Rust! Save the following as hello.rs:</p>
-
-<pre><code class="language-rust">fn main() {
-    println!(&quot;Hello World!&quot;);
-}
-</code></pre>
-
-<p>Open &ldquo;View -&gt; Integrated Terminal.&rdquo; From here you can compile by hand like a peasant, because VS Code isn’t an actual IDE.</p>
-
-<pre><code class="language-sh">bash-3.2$ cd ~/Desktop
-bash-3.2$ rustc hello.rs
-bash-3.2$ ./hello
-Hello World!
-</code></pre>
-
-<p>But for a realistic scenario, we could have also used Cargo to both create a new Rust project and then build it.</p>
-
-<p>In a future post, I will share my thoughts on what it&rsquo;s like to try to actually write a program in Rust.</p>
-
-<h2 id="rust-references">Rust References</h2>
-
-<ul>
-<li><a href="https://rustbyexample.com/index.html">Rust by Example</a></li>
-<li><a href="https://doc.rust-lang.org/book/README.html">The Rust Programming Language</a> (free e-book)</li>
-</ul>
-
-                    </div>
-                </section>
-                
             </div>
-            
-
             <div class="footer">
     <div class="pure-menu pure-menu-horizontal pure-menu-open">
         <ul>

@@ -7,7 +7,7 @@
 
     <meta name="description" content="Chronicles of my hobby projects and tech experiments">
 
-    <meta name="generator" content="Hugo 0.18.1" />
+    <meta name="generator" content="Hugo 0.19" />
     <meta name="twitter:card" content="summary">
     
     <meta name="twitter:title" content="Posts &middot; Mike&#39;s Blog">
@@ -62,6 +62,264 @@
         <div>
             
             <div class="posts">
+                
+                <h1 class="content-subhead">20 Mar 2017, 22:56</h1>
+                <section class="post">
+                    <header class="post-header">
+
+                        <a href="https://michael-myers.github.io/blog/post/a-tour-of-rust-2/" class="post-title">A tour of Rust, Pt. 2</a>
+
+                        <p class="post-meta">
+                            
+                            
+                                under 
+                                
+                                <a class="post-category post-category-rust" href="https://michael-myers.github.io/blog/categories/rust">rust</a><a class="post-category post-category-programming" href="https://michael-myers.github.io/blog/categories/programming">programming</a>
+                            
+                        </p>
+                    </header>
+
+                    <div class="post-description">
+                        
+
+<p>In my last post, I talked about what I think is the significance of the programming language Rust, and why I wanted to try learning it. Today, I take a look at <a href="http://exercism.io">Exercism.io</a> (a sort-of social network for programming exercises) and its series of <a href="http://exercism.io/languages/rust/about">Rust challenges</a>. These are definitely easy problems (so far); the focus is on learning how to solve them in a language that is new to you. We&rsquo;ll see where I tripped up while trying to grasp some of the Rust language features, and some Rust I&rsquo;ve learned so far.</p>
+
+<h2 id="exercism-io-setup-and-workflow">Exercism.io Setup and Workflow</h2>
+
+<p>Assuming you also use MacOS with Homebrew, it&rsquo;s just a couple of steps:</p>
+
+<pre><code class="language-sh">$ brew update &amp;&amp; brew install exercism
+$ exercism configure --key=YOUR_API_KEY
+$ exercism configure --dir=~/Documents/Exercism
+</code></pre>
+
+<p>And then each new programming exercise is fetched this way:</p>
+
+<pre><code class="language-sh">$ exercism fetch rust		# will download the next exercise, &quot;whatever&quot;
+$ cd ~/Documents/Exercism/whatever
+$ mkdir src &amp;&amp; touch src/lib.rs   # then, work on your solution in lib.rs
+</code></pre>
+
+<p>Each exercise asks you to write a Rust library that exports a function or two, such that you implement some behavior instructed in the README.md for that exercise. The folder structure provided is that of a <a href="http://doc.rust-lang.org/stable/book/crates-and-modules.html">Rust &ldquo;crate&rdquo;</a>, which is what Rust (or rather, its build tool, Cargo) calls a source package. You will define a <code>pub fn whatev()</code> in <code>src/lib.rs</code>, which is the filename convention for a Rust <em>library</em> crate (as opposed to an <em>executable</em> crate, which would have a <code>fn main()</code> defined in a <code>src/main.rs</code>). <code>Cargo.toml</code> is the manifest file that defines the crate: the version string, the dependencies, author.</p>
+
+<p>Each challenge comes with unit tests in <code>tests/whatever.rs</code> (technically, integration tests. Rust allows you to write the unit tests inline with the source files themselves). <a href="https://doc.rust-lang.org/book/testing.html">You can run the tests using Rust&rsquo;s build tool, Cargo</a>:</p>
+
+<pre><code class="language-sh">$ cargo test	# both compiles your library and runs the tests
+</code></pre>
+
+<p>If you <em>just</em> wanted to compile, you could run <code>cargo build</code>. Were this an executable crate rather than a library crate, you could also <code>cargo run</code>, but with a library crate <code>run</code> has no meaning, so we <code>cargo test</code>. Note: if you had noticed that the binaries are rather large, that is because Cargo builds debug binaries by default. For release, you would use <code>cargo build —release</code>.</p>
+
+<p>Once all of the unit tests pass for an exercise, you can submit your solution like so:</p>
+
+<pre><code class="language-sh">$ exercism submit src/lib.rs
+</code></pre>
+
+<h2 id="rust-debugging-in-the-vs-code-editor">Rust Debugging in the VS Code editor</h2>
+
+<p>Although I discussed setting up a Rust development environment in the last post, Andrew Hobden has also documented <a href="https://hoverbear.org/2017/03/03/setting-up-a-rust-devenv/">the setup and use of other tools in the Rust development toolchain</a>, and his writeup may be worth a look. For me right now, I don&rsquo;t want the added headache of trying to work with any alpha or &ldquo;nightly build&rdquo; features of Rust. What was important for me was <a href="https://code.visualstudio.com/Docs/editor/debugging">debugging in VS Code</a>, so I appreciated his help with that. While I previously had no luck getting the &ldquo;Native Debug&rdquo; VS Code extension to work, using Andrew&rsquo;s instructions, I did get the &ldquo;LLDB Debugger&rdquo; extension to work.</p>
+
+<p><em>But do you need to manually recreate .vscode/launch.json and .vscode/tasks.json for every project you want to debug? That blows</em> – Well sort of. In VS Code you can click the debug icon in the sidebar and then the settings wheel icon in the debug pane that appears, and VS Code will create a mostly-complete launch.json file to which you just have to add:</p>
+
+<pre><code>&quot;preLaunchTask&quot;: &quot;cargo&quot;,
+&quot;sourceLanguages&quot;: [&quot;rust&quot;]
+</code></pre>
+
+<p>And of course, you&rsquo;ll have to fix the final part of the path for &ldquo;program&rdquo; (your debug target). So there isn&rsquo;t that much to do manually for each new project. But when you tell VS Code to run a &ldquo;preLaunchTask&rdquo;, as above, you then have to define that &ldquo;task&rdquo; in a <code>.vscode/tasks.json</code> file, but it&rsquo;s the same every time, just copy and paste it from your last project. A hassle compared to debugging with a real IDE, but a minor hassle at least.</p>
+
+<h2 id="exercism-exercises-1-10">Exercism Exercises 1-10</h2>
+
+<h3 id="1-hello-world-and-strings-in-rust">1: Hello World, and strings in Rust</h3>
+
+<p>It looks like the developers of this challenge changed their answer format somewhere along the way during development, and now it actually contains conflicting instructions. Fortunately, this is the only challenge with this problem, but ignore the README.md this time as well as the GETTING_STARTED.md. As with most of these challenges, the most important file is <code>tests/hello-world.rs</code> which defines the Cargo unit tests and gives the guiding examples of what your code is supposed to produce. In this case, it is very simple, you just need to produce the string &ldquo;Hello, World!&rdquo; using a function called <code>fn hello</code>.</p>
+
+<p>But what is the correct function declaration for <code>fn hello</code>? First, it has to be a function that is <em>published</em> by your Rust library for external callers, thus it is <code>pub fn hello</code>.</p>
+
+<p>It is not taking any arguments (despite what the muddled insructions state), so it is <code>pub fn hello()</code>.</p>
+
+<p>And it returns a string, so it is…uh-oh. Here, Rust makes this harder than you might expect. There is the primitive type for representing strings, <code>str</code>, and then there is a <code>String</code> type (from the Rust standard library). They seem similar and completely redundant at first, but their purposes and usages are different in a variety of ways that will trip you up if you don&rsquo;t understand what each one means. This duality of Strings and string literals is essential to understand, and it is poorly explained (if explained at all) in every Rust tutorial I&rsquo;ve seen. If people need to write <a href="http://hermanradtke.com/2015/05/03/string-vs-str-in-rust-functions.html">long posts explaining the difference</a>, I think the language documentation could be doing a better job here.</p>
+
+<p>Complicating matters, <code>str</code> is used synonymously in Rust documentation with &ldquo;string&rdquo; and &ldquo;string literal&rdquo;, and a reference to a subset of a <code>String</code> is an <code>&amp;str</code>, a.k.a. &ldquo;string slice&rdquo;. In fact, a function that takes a <code>&amp;str</code> can be passed a <code>&amp;String</code> (a concept in Rust called <em>coercion</em>, i.e. implicit type conversion), but a function that takes a <code>&amp;String</code> cannot be passed a <code>&amp;str</code>. Wow. Confused yet? Just wait until you try to concatenate two strings. We&rsquo;ll get to that later.</p>
+
+<p>If you choose to use <code>String</code>, the return type is simple to understand, but you have to build a <code>String</code> instance out of a string literal using <code>.to_string()</code> or <code>String::from</code>, which is non-obvious:</p>
+
+<pre><code class="language-rust">pub fn hello() -&gt; String {
+  &quot;Hello, World!&quot;.to_string()  // alternatively, String::from(&quot;Hello, World!&quot;)
+}
+</code></pre>
+
+<p>If you choose instead to use <code>str</code>, the actual returned value needs nothing special, but the return type is by <a href="http://intorust.com/tutorial/shared-borrows/"><em>borrowed reference</em></a> (hence the ampersand) and requires a <em>lifetime</em> specifier, something unique to Rust:</p>
+
+<pre><code class="language-rust">pub fn hello() -&gt; &amp;'static str {
+    &quot;Hello, World!&quot;
+}
+</code></pre>
+
+<p>This is to say, <code>hello()</code> returns a reference to an immutable string literal. In other words, a pointer to the string &ldquo;Hello, World!&rdquo; and the caller of hello() cannot change that string using a dereference of this pointer. The reference is valid for <code>static</code>, a lifetime duration defined as the &ldquo;duration of the entire program.&rdquo; This is basically a guarantee to the caller that this reference will always be valid. String literals will always get a static lifetime because they&rsquo;re hard-coded in the compiled Rust binary&rsquo;s data section; they are never deallocated.</p>
+
+<p>So, with a simple HelloWorld example we&rsquo;ve had to introduce ourselves to the three big concepts unique to Rust: <strong>ownership</strong>, <strong>reference borrowing</strong>, and <strong>lifetimes</strong>. We&rsquo;ve also tripped over the <code>str</code>/<code>String</code> duality and the concept of <a href="https://github.com/rust-lang/rfcs/blob/master/text/0401-coercions.md">coercion</a>. As we struggle to comprehend these concepts, they&rsquo;ll be responsible for the majority of our compile-time errors. This is the Rust learning curve.</p>
+
+<h3 id="2-gigasecond-and-including-external-crates">2: Gigasecond, and including external crates</h3>
+
+<p>Hint, for this one, you&rsquo;ll be needing the <a href="https://github.com/chronotope/chrono">Chrono</a> crate, because the Rust standard library currently has no library for handling the concept of time. Your lib.rs file begins with:</p>
+
+<pre><code class="language-rust">extern crate chrono;
+use chrono::*;
+</code></pre>
+
+<p>And your Cargo.toml file declares this dependency as well:</p>
+
+<pre><code class="language-toml">[dependencies]
+chrono = &quot;0.2&quot;
+</code></pre>
+
+<p>When you <code>cargo test</code>, Cargo will automatically fetch and install the crate &ldquo;Chrono&rdquo; for you. Nice! Now you can add seconds to times and compare times to one another.</p>
+
+<p>The instructions for this challenge may mislead you to try to use the caret as an exponentiation operator:</p>
+
+<blockquote>
+<p>A gigasecond is 10^9 (1,000,000,000) seconds.</p>
+</blockquote>
+
+<p>Yes, but Rust (like C before it) lacks an exponentiation operator. Not only does <code>10^9</code> <em>not</em> define the value <code>1_000_000_000</code>, it also doesn&rsquo;t generate a compile-time error. Instead, it is interpreted as the bitwise XOR of 10 and 9: in other words, 10^9 equals 3 (surprise, LOL). Again, the official Rust documentation (&ldquo;The Rust Programming Language&rdquo;) is a bit lacking with its complete absence of explanation of the operators that Rust actually has and does not have, a fundamental part of any language. Instead, you should consult the &ldquo;Rust Language Reference&rdquo; for this information. That said, if you really want to do exponentiation, several of the primitive types have exponentiation methods: the floating point types <code>f32</code> and <code>f64</code> which offer the <code>powi(i32)</code> method, and the integer types <code>i32</code> and <code>i64</code> which offer <code>pow(u32)</code>.</p>
+
+<pre><code class="language-rust">let ten = 10_i64;
+ten.pow(9)  // this is 1,000,000,000
+</code></pre>
+
+<h3 id="3-leap-and-the-modulus-operator">3: Leap, and the modulus operator</h3>
+
+<p>There is little to learn from this exercise except the proper use of the % operator, which, again, was up to you to find in the Language Reference. It&rsquo;s an &ldquo;either you know this trick or you don&rsquo;t&rdquo; challenge, but popular in whiteboard programming questions in job interviews, and occasionally useful in real life. Example snippet:</p>
+
+<pre><code class="language-rust">// On every year that is evenly divisible by 4:
+    if candidate_year % 4 == 0 {
+        // Except every year that is evenly divisible by 100:
+        if candidate_year % 100 == 0 {
+</code></pre>
+
+<h3 id="4-raindrops-and-the-modulus-operator-again">4: Raindrops, and the modulus operator again</h3>
+
+<p>This is a simple integer-to-string (hint: <code>some_value.to_string()</code>) and integer-factoring challenge. Again, the modulo operator is all you need, and this exercise fails to add any new lesson really.</p>
+
+<h3 id="5-bob-and-iterators">5: Bob, and iterators</h3>
+
+<p>Given some <code>&amp;str prompt</code> you can iterate over every character in the string in a for loop, without having to use pointers or indices as a C programmer is tempted to do:</p>
+
+<pre><code class="language-rust">for character in prompt.chars() {
+	// do stuff to each character
+}
+</code></pre>
+
+<p>And in fact, it is basically impossible to loop across a <code>str</code> in any other way, because you cannot use array indexing on a <code>str</code> as you might with a string in C, and create a for loop that ranges from prompt[0] to prompt[prompt.len()]. Even for Rust types where that pattern <em>is</em> possible, it is discouraged: find your loop ranges using iterators, which are returned by methods like <code>.chars()</code> or <code>.iter()</code>. The code above automatically turns <code>character</code> into a value of type <code>char</code> because <code>prompt.chars</code> is a range of <code>char</code> values.</p>
+
+<p>Rust&rsquo;s <code>char</code> type has some handy methods, for example: <code>if character.is_alphabetic()</code> and <code>if character.is_uppercase()</code>.</p>
+
+<h3 id="6-beer-song-string-concatenation-and-the-match-statement">6: Beer Song, string concatenation, and the match statement</h3>
+
+<p>String concatenation in Rust is completely bonkers:</p>
+
+<pre><code class="language-rust">let a = &quot;foo&quot;;
+let b = &quot;bar&quot;;
+
+println!(&quot;{}&quot;, a + b); 							// invalid
+let c = a + &amp;b;  								// invalid
+let c: String = a + b.to_string();				// invalid
+let c: String = a.to_string() + b.to_string(); 	// invalid
+
+let c: String = a.to_string() + b;  			// valid!
+let c: String = a.to_string() + &amp;b.to_string();	// valid!
+c.push_str(&quot; more stuff on the end&quot;);			// valid!
+</code></pre>
+
+<p>The strings <code>a</code> and <code>b</code> here are <code>str</code> instances. The <code>str</code> type lacks any kind of concatenation operator, so you can&rsquo;t use a <code>+</code> to concatenate them <em>when the left operand is a <code>str</code></em>. However <em>when the left operand is a <code>String</code></em> you <strong>totally can</strong> use the <code>+</code> because <code>String</code> <strong>does</strong> have the concatenation operator.</p>
+
+<p>The <code>String</code> type is growable, whereas <code>str</code> is an annoyingly restricted type of data that mucks up everything it touches. You can&rsquo;t build a <code>str</code> out of other <code>str</code>; you can&rsquo;t even build a <code>String</code> out of two <code>str</code> without bending yourself into a pretzel. You may seek to avoid <code>str</code> altogether, but you can&rsquo;t. Because every Rust string literal <em>is</em> a <code>str</code>, we are forced to work with both <code>str</code> and <code>String</code>, upconverting the former to the latter with <code>.to_string()</code>, and/or connecting them onto the end of a <code>String</code> with its <code>.push_str()</code> method.</p>
+
+<p>But at least you can use the <code>match</code> keyword to help with this challenge:</p>
+
+<pre><code class="language-rust">// Form the appropriate English words to refer to the bottle or bottles:
+fn bottles(quantity: u32) -&gt; String {
+    match quantity {
+        0 =&gt; &quot;No more bottles&quot;.to_string(),
+        1 =&gt; &quot;1 bottle&quot;.to_string(),
+        _ =&gt; quantity.to_string() + &quot; bottles&quot;,
+    }
+}
+</code></pre>
+
+<p>That&rsquo;s a lot cleaner than an if—else-if—else would have been.</p>
+
+<h3 id="7-difference-of-squares">7: Difference of Squares</h3>
+
+<p>This one should be a review, you can use iterators (in the form of for-loop ranges), and exponentiation isn&rsquo;t necessary if you just want to do squares:</p>
+
+<pre><code class="language-rust">let somevalue = 123;
+let mut square;
+square = somevalue * somevalue;
+</code></pre>
+
+<h3 id="8-sum-of-multiples">8: Sum of Multiples</h3>
+
+<p>Another review challenge. Tests you again on using iterators, and the modulus operator (&ldquo;is a multiple of x&rdquo; is synonymous with &ldquo;is cleanly divisible by x&rdquo;). You might use nested loops, or maybe something fancier like closures. I think this post is long enough without addressing that concept.</p>
+
+<h3 id="9-grains-and-the-panic-macro">9: Grains, and the panic macro</h3>
+
+<p>Back on exercise 2 we learned how to do exponentiation in Rust, so that&rsquo;s half of this challenge. The other hint is that the unit tests are testing for error conditions indicated by &ldquo;panic.&rdquo; The way to panic in Rust is via the panic macro:</p>
+
+<pre><code class="language-rust">if s &lt; 1 || s &gt; 64 {
+	panic!(&quot;Square must be between 1 and 64&quot;);
+}
+</code></pre>
+
+<h3 id="10-hamming-unwrap-and-the-result-type">10: Hamming, unwrap, and the Result type</h3>
+
+<p>And finally (for now), we learn how to multiplex a return value and an error condition into <a href="https://doc.rust-lang.org/std/result/">one type, <code>Result</code>.</a></p>
+
+<p>If we choose the return value for our function to be <code>-&gt; Result&lt;i32, &amp;'static str&gt;</code> then we are declaring that we might return either <code>Ok(123)</code> or <code>Err(&quot;Something went wrong&quot;)</code>.</p>
+
+<p>Some of the unit tests are checking to see if the returned condition is an error of any kind: <code>.is_err()</code>. Using <code>Err()</code> satisfies that check.</p>
+
+<h2 id="rust-initial-impressions">Rust Initial Impressions</h2>
+
+<p>So after getting beyond &ldquo;Hello world&rdquo; and trying a few exercises, my initial impressions of Rust as a language are that its strictness is its defining characteristic. You could even say it&rsquo;s a pain, honestly, not what I could call a joy to work in (although speaking ill of Rust invites the fans to show up and blame you for failing to love it). The payoff doesn&rsquo;t have to be rapid prototyping joy, though, it just has to be the more secure code that you are ostensibly creating by being so strict and explicit about everything. That&rsquo;s okay too.</p>
+
+<table>
+<thead>
+<tr>
+<th>The Good</th>
+<th>The Bad</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Cargo build tool</td>
+<td>The official documentation for Rust&rsquo;s language and standard library</td>
+</tr>
+
+<tr>
+<td>Passionate community</td>
+<td>Condescending comments like &ldquo;I can tell you&rsquo;re an imperative language guy&rdquo; when you don&rsquo;t use closures</td>
+</tr>
+
+<tr>
+<td><code>rustfmt</code> for automated code style enforcement (<code>cargo fmt</code>)</td>
+<td>Learning curve for the errors emitted by the Rust compiler</td>
+</tr>
+
+<tr>
+<td>Rust can be debugged with <code>rust-lldb</code> or <code>rust-gdb</code> and this mostly works within VS Code</td>
+<td>Your errors will all be compile-time anyway, for better or worse</td>
+</tr>
+
+<tr>
+<td>Expressive method names like .is_alphabetic() are a welcome improvement to C standard lib</td>
+<td>Any time you have to use strings (String vs str, string concatenation, etc.) you will wonder if Rust will ever catch on</td>
+</tr>
+</tbody>
+</table>
+
+                    </div>
+                </section>
                 
                 <h1 class="content-subhead">27 Feb 2017, 13:06</h1>
                 <section class="post">
