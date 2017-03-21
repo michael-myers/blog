@@ -154,14 +154,14 @@ ten.pow(9)  // this is 1,000,000,000
 &lt;pre&gt;&lt;code class=&#34;language-rust&#34;&gt;let a = &amp;quot;foo&amp;quot;;
 let b = &amp;quot;bar&amp;quot;;
 
-println!(&amp;quot;{}&amp;quot;, a + b); 							// invalid
-let c = a + &amp;amp;b;  								// invalid
-let c: String = a + b.to_string();				// invalid
+println!(&amp;quot;{}&amp;quot;, a + b);                          // invalid
+let c = a + &amp;amp;b;                                 // invalid
+let c: String = a + b.to_string();              // invalid
 let c: String = a.to_string() + b.to_string(); 	// invalid
 
-let c: String = a.to_string() + b;  			// valid!
-let c: String = a.to_string() + &amp;amp;b.to_string();	// valid!
-c.push_str(&amp;quot; more stuff on the end&amp;quot;);			// valid!
+let c: String = a.to_string() + b;              // valid!
+let c: String = a.to_string() + &amp;amp;b.to_string(); // valid!
+c.push_str(&amp;quot; more stuff on the end&amp;quot;);           // valid!
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;The strings &lt;code&gt;a&lt;/code&gt; and &lt;code&gt;b&lt;/code&gt; here are &lt;code&gt;str&lt;/code&gt; instances. The &lt;code&gt;str&lt;/code&gt; type lacks any kind of concatenation operator, so you can&amp;rsquo;t use a &lt;code&gt;+&lt;/code&gt; to concatenate them &lt;em&gt;when the left operand is a &lt;code&gt;str&lt;/code&gt;&lt;/em&gt;. However &lt;em&gt;when the left operand is a &lt;code&gt;String&lt;/code&gt;&lt;/em&gt; you &lt;strong&gt;totally can&lt;/strong&gt; use the &lt;code&gt;+&lt;/code&gt; because &lt;code&gt;String&lt;/code&gt; &lt;strong&gt;does&lt;/strong&gt; have the concatenation operator.&lt;/p&gt;

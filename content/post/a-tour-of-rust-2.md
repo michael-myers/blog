@@ -154,14 +154,14 @@ String concatenation in Rust is completely bonkers:
 let a = "foo";
 let b = "bar";
 
-println!("{}", a + b); 							// invalid
-let c = a + &b;  								// invalid
-let c: String = a + b.to_string();				// invalid
+println!("{}", a + b);                          // invalid
+let c = a + &b;                                 // invalid
+let c: String = a + b.to_string();              // invalid
 let c: String = a.to_string() + b.to_string(); 	// invalid
 
-let c: String = a.to_string() + b;  			// valid!
-let c: String = a.to_string() + &b.to_string();	// valid!
-c.push_str(" more stuff on the end");			// valid!
+let c: String = a.to_string() + b;              // valid!
+let c: String = a.to_string() + &b.to_string(); // valid!
+c.push_str(" more stuff on the end");           // valid!
 ```
 
 The strings `a` and `b` here are `str` instances. The `str` type lacks any kind of concatenation operator, so you can't use a `+` to concatenate them *when the left operand is a `str`*. However *when the left operand is a `String`* you **totally can** use the `+` because `String` **does** have the concatenation operator. 

@@ -220,14 +220,14 @@ ten.pow(9)  // this is 1,000,000,000
 <pre><code class="language-rust">let a = &quot;foo&quot;;
 let b = &quot;bar&quot;;
 
-println!(&quot;{}&quot;, a + b); 							// invalid
-let c = a + &amp;b;  								// invalid
-let c: String = a + b.to_string();				// invalid
+println!(&quot;{}&quot;, a + b);                          // invalid
+let c = a + &amp;b;                                 // invalid
+let c: String = a + b.to_string();              // invalid
 let c: String = a.to_string() + b.to_string(); 	// invalid
 
-let c: String = a.to_string() + b;  			// valid!
-let c: String = a.to_string() + &amp;b.to_string();	// valid!
-c.push_str(&quot; more stuff on the end&quot;);			// valid!
+let c: String = a.to_string() + b;              // valid!
+let c: String = a.to_string() + &amp;b.to_string(); // valid!
+c.push_str(&quot; more stuff on the end&quot;);           // valid!
 </code></pre>
 
 <p>The strings <code>a</code> and <code>b</code> here are <code>str</code> instances. The <code>str</code> type lacks any kind of concatenation operator, so you can&rsquo;t use a <code>+</code> to concatenate them <em>when the left operand is a <code>str</code></em>. However <em>when the left operand is a <code>String</code></em> you <strong>totally can</strong> use the <code>+</code> because <code>String</code> <strong>does</strong> have the concatenation operator.</p>
