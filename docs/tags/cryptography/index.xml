@@ -2,11 +2,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Cryptography on Mike&#39;s Blog</title>
-    <link>https://michael-myers.github.io/blog/tags/cryptography/index.xml</link>
+    <link>https://michael-myers.github.io/blog/tags/cryptography/</link>
     <description>Recent content in Cryptography on Mike&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <atom:link href="https://michael-myers.github.io/blog/tags/cryptography/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 12 Feb 2017 13:40:38 -0500</lastBuildDate>
+    
+	<atom:link href="https://michael-myers.github.io/blog/tags/cryptography/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Enigma2017 CTF Broken Encryption Writeup</title>
@@ -14,209 +17,7 @@
       <pubDate>Sun, 12 Feb 2017 13:40:38 -0500</pubDate>
       
       <guid>https://michael-myers.github.io/blog/post/enigma2017-broken-encryption-writeup/</guid>
-      <description>
-
-&lt;p&gt;There is a new &amp;ldquo;Jeopardy style&amp;rdquo; security CTF web framework (CTF-as-a-Service?) called &lt;a href=&#34;http://hackcenter.com/&#34;&gt;HackCenter&lt;/a&gt; that just debuted from For All Secure, the CMU-affiliated security startup known for &lt;a href=&#34;https://www.defense.gov/News/Article/Article/906931/three-teams-earn-prizes-in-darpa-cyber-grand-challenge&#34;&gt;winning last year&amp;rsquo;s DARPA Cyber Grand Challenge Final Event&lt;/a&gt; with their game-playing &amp;ldquo;automated exploit generation&amp;rdquo; system they called Mayhem CRS. HackCenter is their &amp;ldquo;other&amp;rdquo; technology, I guess, and right now the only CTF they&amp;rsquo;ve hosted is/was the one that occurred at &lt;a href=&#34;https://www.usenix.org/conference/enigma2017&#34;&gt;Enigma2017 USENIX&lt;/a&gt; conference at the end of January. It seemed to be marketed as educational: &amp;ldquo;learn to hack!&amp;rdquo; and not as unfriendly and elitist as some of the more competitive CTFs, so I gave it a look. Also, this was a chance to refresh myself on some Python.&lt;/p&gt;
-
-&lt;h2 id=&#34;the-challenge&#34;&gt;The Challenge&lt;/h2&gt;
-
-&lt;p&gt;They give us a telnet server that prompts us to send whatever string we want, and then it sends back an encrypted version of that string. Also they give us this source code for the server:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;#!/usr/bin/python -u
-from Crypto.Cipher import AES
-
-flag = open(&amp;quot;flag&amp;quot;, &amp;quot;r&amp;quot;).read().strip()
-key = open(&#39;enc_key&#39;, &#39;r&#39;).read().strip().decode(&#39;hex&#39;)
-
-welcome = &amp;quot;&amp;quot;&amp;quot;
-************ MI6 Secure Encryption Service ************
-                  [We&#39;re super secure]
-       ________   ________    _________  ____________;_
-      - ______ \ - ______ \ / _____   //.  .  ._______/ 
-     / /     / // /     / //_/     / // ___   /
-    / /     / // /     / /       .-&#39;//_/|_/,-&#39;
-   / /     / // /     / /     .-&#39;.-&#39;
-  / /     / // /     / /     / /
- / /     / // /     / /     / /
-/ /_____/ // /_____/ /     / /
-\________- \________-     /_/
-
-&amp;quot;&amp;quot;&amp;quot;
-
-def pad(m):
-  m = m + &#39;1&#39;
-  while len(m) % 16 != 0:
-    m = m + &#39;0&#39;
-  return m
-
-def encrypt():
-  cipher = AES.new(key,AES.MODE_ECB)
-
-  m = raw_input(&amp;quot;Agent number: &amp;quot;)
-  m = &amp;quot;agent &amp;quot; + m + &amp;quot; wants to see &amp;quot; + flag
-
-  return cipher.encrypt(pad(m)).encode(&amp;quot;hex&amp;quot;)
-
-print welcome
-print encrypt()
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;We also get a web shell on hackcenter.com: literally an in-browser terminal emulator connected to the remote server (we do not have read access to the directory with &amp;ldquo;flag&amp;rdquo;), but for this problem we will just open our local Terminal app and poke around.&lt;/p&gt;
-
-&lt;h2 id=&#34;anything-ecb-is-bad-mmmkay&#34;&gt;Anything ECB is Bad Mmmkay&lt;/h2&gt;
-
-&lt;p&gt;Look at the source: basically, &lt;code&gt;&amp;quot;agent &amp;quot; + yourinput + &amp;quot; wants to see &amp;quot; + flag&lt;/code&gt; is padded out to the next nearest AES block length (128 bits == 16 bytes) and then encrypted with AES-ECB using whatever the key is. Now, basically the first thing you learn about block ciphers is to never use the Electronic Code Book (ECB) mode. You&amp;rsquo;ll see a photo of Tux the Linux mascot encrypted with AES-ECB and how you can still see the edges of the image in the encrypted version. But that&amp;rsquo;s about it. It&amp;rsquo;s rare to see an explanation of why this is relevant or how to break it. Just, &amp;ldquo;everyone knows it&amp;rsquo;s bad.&amp;rdquo;&lt;/p&gt;
-
-&lt;p&gt;The reason why ECB mode of any block cipher is bad is that the same input always encrypts to the same output. The input is broken into fixed-length blocks and encrypted, and all of the blocks of identical input will create similarly equal output blocks. The data is all encrypted, but we know where their plaintexts were the same. There is &lt;em&gt;no key recovery attack against this issue&lt;/em&gt;, at least not that I am aware of, but the problem is that the plaintext can be guessed. There are two basic attacks against ECB:&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Given enough encrypted blocks and some partial knowledge of the plaintext (known offsets of fixed data, like as defined by filetype formats or communication protocols), statistical and frequency analysis (and some guessing, then confirming) can reveal partial plaintext.&lt;/li&gt;
-&lt;li&gt;Given the ability to prefix or circumfix (that means insert in the middle somewhere) arbitrary plaintext, and then have it encrypted and view the resulting ciphertext, an attacker can stage what cryptographers call a Chosen Plaintext Attack (CPA). The scenario of passing arbitrary plaintext to a remote encryptor and receiving the ciphertext back is also called an &lt;a href=&#34;https://en.wikipedia.org/wiki/Oracle_machine#Applications_to_cryptography&#34;&gt;Oracle&lt;/a&gt;. This is the attack we will discuss in this post.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;The reason why this is &lt;em&gt;relevant&lt;/em&gt; is that to the average programmer who can&amp;rsquo;t be bothered, ECB looks like a valid mode choice for AES, a cipher that people generally recommend: &amp;ldquo;military grade crypto,&amp;rdquo; right? They might use it to encrypt the cookie their web site stores in your browser. Or if they&amp;rsquo;re especially ignorant in security like the people who work at Adobe, &lt;a href=&#34;https://arstechnica.com/security/2013/11/how-an-epic-blunder-by-adobe-could-strengthen-hand-of-password-crackers/&#34;&gt;they might use it to encrypt their users&amp;rsquo; passwords on the server&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&#34;breaking-ecb-with-the-chosen-plaintext-attack&#34;&gt;Breaking ECB with the Chosen Plaintext Attack&lt;/h2&gt;
-
-&lt;p&gt;Being able to circumfix our arbitrary input into the plaintext (at a known location in that string) means that we can choose an input such that we can fully align &lt;em&gt;our&lt;/em&gt; &lt;em&gt;known&lt;/em&gt; &lt;em&gt;substring&lt;/em&gt; on an AES block boundary. Thus allowing us to test what the ciphertext is for any arbitrary block that we choose.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;quot;agent &amp;quot; + yourinput + &amp;quot; wants to see &amp;quot; + flag + padding
-(6 chars)  (n chars)    (14 chars)   &amp;lt;—- if you want to test-encrypt a single block of arbitrary input, put your test input on a 16-byte block boundary, like so: yourinput = &amp;quot;01234567891000000000000000&amp;quot;. &amp;quot;1000000000000000&amp;quot; is at bytes 16 through 31 of the input, aka the second AES (128-bit, 16-byte) block.
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;We don&amp;rsquo;t know how long the flag is, but we know how the padding is applied: if the plaintext message does not end on a 16-byte boundary, then it is extended by a single &amp;ldquo;1&amp;rdquo; and up to 14 &amp;ldquo;0&amp;rdquo; characters. If the plaintext message &lt;em&gt;does&lt;/em&gt; end on a 16-byte boundary, then it is extended by a full block of padding: &lt;code&gt;1000000000000000&lt;/code&gt;. This may seem counter-intuitive, but there always has to be padding in a block cipher, even when the message length already is a multiple of the block length: otherwise how would you know if the last block is padding or if &lt;code&gt;1000000000000000&lt;/code&gt; was part of the message?&lt;/p&gt;
-
-&lt;p&gt;See where we&amp;rsquo;re going with this? We will give the above plaintext, and observe the output&amp;rsquo;s 2nd block. That is the exact same output we would expect to see as the last block of ciphertext if the flag ends at a block boundary and the final block were AES padding.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;Agent number: 01234567891000000000000000
-ceaa6fa24a71971f21413c1ea39f4e7c53b1c1d36d11a2c20dfc3913bb299f11c9777890922460e74fefb1a94f5c95df0ebb6d7bc5a7922f0857283feb2b068dc5148be36b7670e2ca4fe52c3f65c37612b88acbe4bbd5a9f2588bbc4e0ea92453b1c1d36d11a2c20dfc3913bb299f11
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Note the second block (32 hex characters = 16 bytes) of ciphertext is &lt;code&gt;53b1c1d36d11a2c20dfc3913bb299f11c&lt;/code&gt; and, through a stroke of luck, we&amp;rsquo;ve already aligned the overall message on a block boundary too, as we see &lt;code&gt;53b1c1d36d11a2c20dfc3913bb299f11c&lt;/code&gt; is also the last block of ciphertext!&lt;/p&gt;
-
-&lt;p&gt;The game now is to insert one &lt;em&gt;additional&lt;/em&gt; byte of arbitray text in order to push a single byte of the &amp;ldquo;flag&amp;rdquo; portion of the string rightward into the padding block. The final padding block will be &lt;code&gt;n100000000000000&lt;/code&gt; where &lt;code&gt;n&lt;/code&gt; is the unknown byte of flag.&lt;/p&gt;
-
-&lt;p&gt;What will we do then to guess that byte? We&amp;rsquo;ll brute-force it: send new plaintext messages for all 255 possibilities of &lt;code&gt;n&lt;/code&gt; in our block-aligned arbitrary input (which is the 2nd block). When the ciphertext&amp;rsquo;s 2nd block matches the ciphertext&amp;rsquo;s 7th block, then we know we guessed correctly. Then we&amp;rsquo;ll insert one additional byte again at the same location, and repeat this process. In other words, we expect to send a series of messages like the following:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;0123456789a100000000000000
-0123456789b100000000000000
-0123456789c100000000000000
-0123456789d100000000000000
-0123456789e100000000000000 ... let&#39;s say that ciphertext blocks 2 and 7 match at this point!
-0123456789ae10000000000000
-0123456789be10000000000000
-0123456789ce10000000000000
-0123456789de10000000000000
-0123456789ee10000000000000
-0123456789fe10000000000000 ... they match again. We so far know last block = fe10000000000000
-0123456789afe1000000000000
-0123456789bfe1000000000000
-and so on, and so on... up to 255 guesses per byte and as many bytes as we need to discover
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;In practical terms, we can try guessing only in the ASCII range of 0x20-0x7E or so, since we expect the secret in this case to be plaintext (the &amp;ldquo;flag&amp;rdquo;). This will speed things up by more than double.&lt;/p&gt;
-
-&lt;h2 id=&#34;putting-it-all-togther-a-solution-in-python&#34;&gt;Putting it All Togther: A Solution in Python&lt;/h2&gt;
-
-&lt;p&gt;Knowing what to do is half the battle. The other half is coding it up and tearing your hair out over data alignment issues and dynamic typing issues.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;#!/usr/bin/python
-
-# Enigma2017 CTF, &amp;quot;Broken Encryption&amp;quot;
-
-import sys
-import time       # for using a delay in network connections
-import telnetlib  # don&#39;t try using raw sockets, you&#39;ll tear your hair out trying to send the right line feed character
-
-__author__ = &#39;michael-myers&#39;
-
-# TODO: I&#39;m interested in any more elegant way to block-slice a Python string like this.
-# Split out every 16-byte (32-hex char) block of returned ciphertext:
-def parse_challenge(challenge):
-    ciphertext_blocks = [challenge[0:32], challenge[32:64], challenge[64:96],
-                         challenge[96:128], challenge[128:160], challenge[160:192],
-                         challenge[192:224], challenge[224:]]
-    return ciphertext_blocks
-
-
-# To attack AES-ECB, we will be exploiting the following facts:
-#   * we do not know all of the plaintext but we control a substring of it.
-#	* the controlled portion is at a known offset within the string.
-#   * by varying our input length we can force the secret part onto a block boundary.
-#   * we can choose our substring to be a full block of padding &amp;amp; align it at a boundary.
-#   * if the message ends at a block boundary, the last 16-byte block will be all padding.
-#   * thus we know when the secret part is block aligned; we&#39;ll see the same ciphertext.
-#   * there is no nonce or IV or counter, so ciphertext is deterministic.
-#   * by varying length of plaintext we can align the secret part such that there 
-#		is only one unknown byte at a time being encrypted in the final block of output. 
-#	* by varying one byte at a time, we can brute-force guess input blocks until we
-#       match what we see in the final block, thus giving us one byte of the secret.
-#   * we will limit our guesses to the ASCII range 0x20-0x7E for this particular challenge.
-#
-# Begin by changing the 2nd block of plaintext to n100000000000000, where n is a guess. 
-# If the ciphertext[2nd block] == ciphertext[7th block] then the guess is correct,
-# otherwise increment n.
-def main():
-    # If the Engima2017 servers are still up: enigma2017.hackcenter.com 7945
-    if len(sys.argv) &amp;lt; 3:   # lol Python doesn&#39;t have an argc
-        print &#39;Usage : python CTF-Challenge-Response.py hostname port&#39;
-        sys.exit()
-    host = sys.argv[1]
-    port = int(sys.argv[2])
-    
-    guessed_secret = &amp;quot;&amp;quot;
-
-    # Our input pads to the end of the 1st block, then aligns a guess at block 2.
-    # Because we need to constantly alter this value, we are making it a bytearray. 
-    # Strings in Python are immutable and inappropriate to use for holding data.
-    chosen_plaintext = bytearray(&amp;quot;0123456789&amp;quot; + &amp;quot;1000000000000000&amp;quot;)
-
-    # Guess each byte of the secret, in succession, by manipulating the 2nd plaintext
-    # block (bytes 10 through 26) and looking for a matched ciphertext in the final block:
-    for secret_bytes_to_guess in range(0, 64):
-        # Add in a new guessing byte at the appropriate position:
-        chosen_plaintext.insert(10, &amp;quot;?&amp;quot;)
-
-        # Guess over and over different values until we get this byte:
-        for guessed_byte in range(0x20, 0x7E):  # this is the printable ASCII range.
-            chosen_plaintext[10] = chr(guessed_byte)
-
-            tn = telnetlib.Telnet(&amp;quot;enigma2017.hackcenter.com&amp;quot;, 7945)
-            tn.read_until(&amp;quot;Agent number: &amp;quot;)
-
-            # Telnet input MUST BE DELIVERED with a \r\n line ending. If you send
-            # only the \n the remote end will silently error on your input and send back
-            # partially incorrect ciphertext! Untold hours debugging that bullshit.
-            # Here we carefully convert the bytearray to ASCII and then to a string type, 
-            # or else telnetlib barfs because of the hell that is dynamic typing.
-            send_string = str(chosen_plaintext.decode(&#39;ascii&#39;) + &amp;quot;\r\n&amp;quot;)
-            tn.write(send_string)
-
-            challenge = tn.read_all()
-            tn.close()
-            # time.sleep(0.5)   # (optional) rate-limit if you&#39;re worried about getting banned.
-
-            ciphertext_blocks = parse_challenge(challenge)
-            print &amp;quot;Currently guessing: &amp;quot; + chosen_plaintext[10:26]  # 2nd block holds the guess
-            print &amp;quot;Chosen vs. final ciphertext blocks: &amp;quot; + ciphertext_blocks[1] + &amp;quot; &amp;lt;- ? -&amp;gt; &amp;quot; + ciphertext_blocks[6]
-
-            # We&#39;re always guessing in the 2nd block and comparing result vs the 7th block:
-            if ciphertext_blocks[1] == ciphertext_blocks[6]:
-                print &amp;quot;Guessed a byte of the secret: &amp;quot; + chr(guessed_byte)
-                guessed_secret = chr(guessed_byte) + guessed_secret
-                break   # Finish the inner loop immediately, back up to the outer loop.
-
-    print &amp;quot;All guessed bytes: &amp;quot; + guessed_secret
-
-    print(&amp;quot;Done&amp;quot;)
-
-
-if __name__ == &amp;quot;__main__&amp;quot;:
-    main()
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;And, after all of this, we uncover the flag: &lt;code&gt;54368eae12f64b2451cc234b0f327c7e_ECB_is_the_w0rst&lt;/code&gt;&lt;/p&gt;
-</description>
+      <description>There is a new &amp;ldquo;Jeopardy style&amp;rdquo; security CTF web framework (CTF-as-a-Service?) called HackCenter that just debuted from For All Secure, the CMU-affiliated security startup known for winning last year&amp;rsquo;s DARPA Cyber Grand Challenge Final Event with their game-playing &amp;ldquo;automated exploit generation&amp;rdquo; system they called Mayhem CRS. HackCenter is their &amp;ldquo;other&amp;rdquo; technology, I guess, and right now the only CTF they&amp;rsquo;ve hosted is/was the one that occurred at Enigma2017 USENIX conference at the end of January.</description>
     </item>
     
   </channel>

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on Mike&#39;s Blog</title>
+    <link>https://michael-myers.github.io/blog/categories/</link>
+    <description>Recent content in Categories on Mike&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 05 Feb 2017 03:05:56 -0500</lastBuildDate>
+    
+	<atom:link href="https://michael-myers.github.io/blog/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Blogging</title>
+      <link>https://michael-myers.github.io/blog/categories/blogging/</link>
+      <pubDate>Sun, 05 Feb 2017 03:05:56 -0500</pubDate>
+      
+      <guid>https://michael-myers.github.io/blog/categories/blogging/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Business</title>
+      <link>https://michael-myers.github.io/blog/categories/business/</link>
+      <pubDate>Tue, 21 Feb 2017 13:45:59 -0500</pubDate>
+      
+      <guid>https://michael-myers.github.io/blog/categories/business/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Contracting</title>
+      <link>https://michael-myers.github.io/blog/categories/contracting/</link>
+      <pubDate>Tue, 21 Feb 2017 13:45:59 -0500</pubDate>
+      
+      <guid>https://michael-myers.github.io/blog/categories/contracting/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cryptography</title>
+      <link>https://michael-myers.github.io/blog/categories/cryptography/</link>
+      <pubDate>Sun, 12 Feb 2017 13:40:38 -0500</pubDate>
+      
+      <guid>https://michael-myers.github.io/blog/categories/cryptography/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ctf</title>
+      <link>https://michael-myers.github.io/blog/categories/ctf/</link>
+      <pubDate>Sun, 12 Feb 2017 17:52:54 -0500</pubDate>
+      
+      <guid>https://michael-myers.github.io/blog/categories/ctf/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Exploitation</title>
+      <link>https://michael-myers.github.io/blog/categories/exploitation/</link>
+      <pubDate>Sun, 12 Feb 2017 17:52:54 -0500</pubDate>
+      
+      <guid>https://michael-myers.github.io/blog/categories/exploitation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hugo</title>
+      <link>https://michael-myers.github.io/blog/categories/hugo/</link>
+      <pubDate>Sun, 05 Feb 2017 03:05:56 -0500</pubDate>
+      
+      <guid>https://michael-myers.github.io/blog/categories/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux</title>
+      <link>https://michael-myers.github.io/blog/categories/linux/</link>
+      <pubDate>Sun, 12 Feb 2017 17:52:54 -0500</pubDate>
+      
+      <guid>https://michael-myers.github.io/blog/categories/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Programming</title>
+      <link>https://michael-myers.github.io/blog/categories/programming/</link>
+      <pubDate>Mon, 20 Mar 2017 22:56:03 -0500</pubDate>
+      
+      <guid>https://michael-myers.github.io/blog/categories/programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>https://michael-myers.github.io/blog/categories/python/</link>
+      <pubDate>Sun, 12 Feb 2017 13:40:38 -0500</pubDate>
+      
+      <guid>https://michael-myers.github.io/blog/categories/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Rust</title>
+      <link>https://michael-myers.github.io/blog/categories/rust/</link>
+      <pubDate>Mon, 20 Mar 2017 22:56:03 -0500</pubDate>
+      
+      <guid>https://michael-myers.github.io/blog/categories/rust/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Security</title>
+      <link>https://michael-myers.github.io/blog/categories/security/</link>
+      <pubDate>Mon, 27 Feb 2017 13:06:16 -0500</pubDate>
+      
+      <guid>https://michael-myers.github.io/blog/categories/security/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Web</title>
+      <link>https://michael-myers.github.io/blog/categories/web/</link>
+      <pubDate>Fri, 03 Feb 2017 19:07:12 -0500</pubDate>
+      
+      <guid>https://michael-myers.github.io/blog/categories/web/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

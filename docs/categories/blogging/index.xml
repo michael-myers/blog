@@ -2,11 +2,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Blogging on Mike&#39;s Blog</title>
-    <link>https://michael-myers.github.io/blog/categories/blogging/index.xml</link>
+    <link>https://michael-myers.github.io/blog/categories/blogging/</link>
     <description>Recent content in Blogging on Mike&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <atom:link href="https://michael-myers.github.io/blog/categories/blogging/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 05 Feb 2017 03:05:56 -0500</lastBuildDate>
+    
+	<atom:link href="https://michael-myers.github.io/blog/categories/blogging/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>The markup language known as Markdown</title>
@@ -14,146 +17,8 @@
       <pubDate>Sun, 05 Feb 2017 03:05:56 -0500</pubDate>
       
       <guid>https://michael-myers.github.io/blog/post/markdown/</guid>
-      <description>
-
-&lt;h2 id=&#34;what-it-is&#34;&gt;What it Is&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Markdown&#34;&gt;Markdown&lt;/a&gt; is a &lt;em&gt;lightweight markup language&lt;/em&gt; (as opposed to a &lt;strong&gt;heavyweight&lt;/strong&gt; one like HTML or LaTeX). If you&amp;rsquo;ve ever taken plain-text file notes and used an asterisk to represent a bullet point, or a line of dashes like an underline for a heading, then you&amp;rsquo;ve basically already written Markdown. Markdown is a natural-looking &amp;ldquo;syntax&amp;rdquo; that lets you turn text like this:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;## What it is
-[Markdown](https://en.wikipedia.org/wiki/Markdown) is a *lightweight markup language* (as opposed to a **heavyweight** one like HTML or LaTeX).
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;into the HTML+CSS page that you&amp;rsquo;re looking at right now. We&amp;rsquo;ve all known that annoying nerd who refuses to send HTML-formatted emails and insists on sending plain text peppered with slashes and asterisks instead of italics and bold? Yea, basically a guy like that turned it into a semi-official standard, and now instead of being imaginary italics and bold, it actually renders that way.&lt;/p&gt;
-
-&lt;h2 id=&#34;why-not-just-write-in-html-directly&#34;&gt;Why Not Just Write in HTML Directly?&lt;/h2&gt;
-
-&lt;p&gt;I think this is &lt;a href=&#34;http://brettterpstra.com/2011/08/31/why-markdown-a-two-minute-explanation/&#34;&gt;best explained by Brett Terpstra here&lt;/a&gt;. Basically, HTML sucks to work in, if you&amp;rsquo;re just trying to write some content. HTML is tedious, hard on the eyes, and error prone. If you want a site to look good at all, it also needs CSS, and that sucks even worse. Real people don&amp;rsquo;t want to work in either one, they just want to write prose and have it look good. For this, you can use Markdown as a standard format for your thoughts, and then let a static site generator (like Hugo) turn it into a web page. Be a writer, not a website developer, is the thinking.&lt;/p&gt;
-
-&lt;h2 id=&#34;editors&#34;&gt;Editors&lt;/h2&gt;
-
-&lt;p&gt;I went looking for the ideal text editor in which to edit Markdown files. Ideally I could find something that ran on both MacOS and Linux, just for consistency since I use both. But Markdown is a standard format so I would also settle for the best on each respective platform, even if I had to use two different editors.&lt;/p&gt;
-
-&lt;p&gt;If there is one thing that gets reinvented most often, it&amp;rsquo;s text editors. Programmers love to re-solve their own nerd problems rather than tackle real-world problems, and one problem every programmer has is editing text. So there are about 500 choices of text editor at this point, but I narrowed it down to these 7 just on the basis of using them to edit Markdown.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;img/markdownEditors.png&#34; alt=&#34;MarkdownEditors&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;If the job is programming, a text editor should have code-completion and syntax highlighting. But if the job is editing a markup language, WYSIWYG is the number one thing I care about. So you notice I am not even considering the Vims and Emacs of the world. The whole point of Markdown was to be easy: easy for a human to read in its raw state, easy to edit. But I guess I would take this sentiment a little bit further: why should I have to look at markup language at all? It&amp;rsquo;s 2017, shouldn&amp;rsquo;t I have an editor at least as good as WordPad from Windows 95? Of course, I want it to be able to flip back to the raw &amp;ldquo;source&amp;rdquo; markup when necessary, but most of the time I just want to edit it the way it&amp;rsquo;s going to look when I&amp;rsquo;m done.&lt;/p&gt;
-
-&lt;p&gt;This is a surprisingly uncommon feature. It seems that most editors have adopted the two-view or split-window paradigm seen in editors for more complicated markup and typesetting languages like LaTeX. They present the raw Markdown source on the left, and the rendered version on the right. Booooo. The concept of Auto-save, on the other hand, is a ubiquitous feature nowadays. That&amp;rsquo;s great to see.&lt;/p&gt;
-
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th align=&#34;left&#34;&gt;&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;TextNut&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;Typora&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;HarooPad&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;Quiver&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;Atom&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;Sublime&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;Texts&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;WYSIWYG&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;&lt;strong&gt;Yes&lt;/strong&gt;&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;&lt;strong&gt;Yes&lt;/strong&gt;&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;No&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;No&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;No&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;No&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;&lt;strong&gt;Yes&lt;/strong&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Easy to Use&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;&lt;strong&gt;Yes&lt;/strong&gt;&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;&lt;strong&gt;Yes&lt;/strong&gt;&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;&lt;strong&gt;Yes&lt;/strong&gt;&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;&lt;strong&gt;Yes&lt;/strong&gt;&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;No&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;No&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;&lt;strong&gt;Yes&lt;/strong&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Both Mac &amp;amp; Linux&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;No&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;&lt;strong&gt;Yes&lt;/strong&gt;&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;&lt;strong&gt;Yes&lt;/strong&gt;&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;No&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;&lt;strong&gt;Yes&lt;/strong&gt;&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;&lt;strong&gt;Yes&lt;/strong&gt;&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;No&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Free / OSS&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;No ($25)&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;No (Beta)&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;&lt;strong&gt;Yes&lt;/strong&gt;&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;No ($10)&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;&lt;strong&gt;Yes&lt;/strong&gt;&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;No ($70)&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;No ($20)&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Auto-save&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;&lt;strong&gt;Yes&lt;/strong&gt;&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;&lt;strong&gt;Yes&lt;/strong&gt;&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;&lt;strong&gt;Yes&lt;/strong&gt;&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;&lt;strong&gt;Yes&lt;/strong&gt;&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;&lt;strong&gt;Yes&lt;/strong&gt;&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;&lt;strong&gt;Yes&lt;/strong&gt;&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;&lt;strong&gt;Yes&lt;/strong&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Work Directly in .md&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;No*&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;&lt;strong&gt;Yes&lt;/strong&gt;&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;&lt;strong&gt;Yes&lt;/strong&gt;&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;No*&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;&lt;strong&gt;Yes&lt;/strong&gt;&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;&lt;strong&gt;Yes&lt;/strong&gt;&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;&lt;strong&gt;Yes&lt;/strong&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Leaves TOML Intact&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;&lt;strong&gt;Yes&lt;/strong&gt;&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;&lt;strong&gt;Yes&lt;/strong&gt;&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;&lt;strong&gt;Yes&lt;/strong&gt;&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;Unknown&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;&lt;strong&gt;Yes&lt;/strong&gt;&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;&lt;strong&gt;Yes&lt;/strong&gt;&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;No&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;* = TextNut can open and edit a .md file, but the WYSIWYG aspect only works when it is &amp;ldquo;imported&amp;rdquo; to the proprietary format and edited there, then exported back to Markdown. Quiver has similar focus on Notes and a similar weakness in working in .md directly: basically it&amp;rsquo;s a less capable TextNut.&lt;/p&gt;
-
-&lt;p&gt;I like &lt;a href=&#34;http://www.texts.io&#34;&gt;Texts&lt;/a&gt;, but it breaks the &amp;ldquo;front matter&amp;rdquo; on a Hugo post, so that&amp;rsquo;s a deal-breaker. &lt;a href=&#34;http://pad.haroopress.com&#34;&gt;HarooPad&lt;/a&gt;, besides having a lack of  documentation in English and development that has been dead for a couple of years, is pretty robust. If it could only offer WYSIWYG editing I think it would have been my choice.&lt;/p&gt;
-
-&lt;p&gt;So the overall winner for me is &lt;a href=&#34;https://typora.io&#34;&gt;Typora&lt;/a&gt;. Eventually it will leave beta, and they&amp;rsquo;ll charge for it, but hopefully it&amp;rsquo;s something reasonable. Until then, it&amp;rsquo;s free!&lt;/p&gt;
-
-&lt;h2 id=&#34;quicklook-for-md-files-macos&#34;&gt;QuickLook for .md Files (MacOS)&lt;/h2&gt;
-
-&lt;p&gt;I am all about using QuickLook in MacOS. You just hit space bar on a file in Finder and you get a perfectly good read-only peek at the file. But it doesn&amp;rsquo;t handle Markdown (as plain text, let alone as a rendered view). Fortunately &lt;a href=&#34;https://github.com/toland/qlmarkdown/releases&#34;&gt;someone made a QuickLook generator&lt;/a&gt; you can install using Homebrew: &lt;code&gt;brew install Caskroom/cask/qlmarkdown&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Now you&amp;rsquo;re ready to work with Markdown files!&lt;/p&gt;
-
-&lt;h2 id=&#34;it-s-not-all-roses-though-behind-the-scenes-on-this-post&#34;&gt;It&amp;rsquo;s Not All Roses Though: Behind the Scenes on This Post&lt;/h2&gt;
-
-&lt;p&gt;The rendering of your content doesn&amp;rsquo;t &lt;em&gt;always&lt;/em&gt; turn out the way you envisioned. When this happens, it&amp;rsquo;s either your Hugo theme, or the Markdown renderer that is to blame. Unfortunately, this might mean rolling up your sleeves and fixing CSS, as I had to do in order to get the table above to look decent. Hopefully this is a one-time thing. I had to go into the purehugo theme subdirectory, and edit &lt;code&gt;static/all.min.css&lt;/code&gt; within that.&lt;/p&gt;
-
-&lt;p&gt;Secondly, when editing Markdown to embed an image from a local directory (as I&amp;rsquo;ve done above), Hugo requires you to put the files in &lt;code&gt;/static&lt;/code&gt; and then in the Markdown you specify a relative path &lt;em&gt;without&lt;/em&gt; a leading slash, such as &lt;code&gt;![MarkdownEditors](img/markdownEditors.png)&lt;/code&gt; (actual path of the image in the source tree is &lt;code&gt;/blog/static/img/markdownEditors.png&lt;/code&gt;) and Hugo will copy it to the publishdir during rendering. Because of this, you can&amp;rsquo;t actually see the image in your Markdown editor, which sucks, and your source tree will have two copies of the file, which also sucks.&lt;/p&gt;
-</description>
+      <description>What it Is Markdown is a lightweight markup language (as opposed to a heavyweight one like HTML or LaTeX). If you&amp;rsquo;ve ever taken plain-text file notes and used an asterisk to represent a bullet point, or a line of dashes like an underline for a heading, then you&amp;rsquo;ve basically already written Markdown. Markdown is a natural-looking &amp;ldquo;syntax&amp;rdquo; that lets you turn text like this:
+## What it is [Markdown](https://en.wikipedia.org/wiki/Markdown) is a *lightweight markup language* (as opposed to a **heavyweight** one like HTML or LaTeX).</description>
     </item>
     
     <item>
@@ -162,93 +27,8 @@
       <pubDate>Fri, 03 Feb 2017 19:07:12 -0500</pubDate>
       
       <guid>https://michael-myers.github.io/blog/post/hugo/</guid>
-      <description>
-
-&lt;h2 id=&#34;hugo-a-static-site-generator&#34;&gt;Hugo, a Static Site Generator&lt;/h2&gt;
-
-&lt;p&gt;In my last post, I covered the rationale behind using a static site generator. Static site generators are not just for creating blogs. They can also be used to create online resumes, company sites, online documentation, etc.&lt;/p&gt;
-
-&lt;p&gt;The default choice for static site generator is Jekyll, which has the most support, but it&amp;rsquo;s troublesome to install and use. Hugo is a popular alternative that is easier to install, and faster to work with. It&amp;rsquo;s implemented in Golang, a.k.a. Go. This means it is written in a statically compiled language (The Best Kind) and is &lt;em&gt;completely dependency free.&lt;/em&gt; Dependency hell is the bane of my existence. It&amp;rsquo;s like work that you have to do before you can start working. Anyway, let&amp;rsquo;s look at how to get started.&lt;/p&gt;
-
-&lt;h2 id=&#34;hugo-install-process-macos&#34;&gt;Hugo Install Process (MacOS)&lt;/h2&gt;
-
-&lt;p&gt;This is so simple, and its simplicity is the reason why I went with Hugo after trying the more popular Jekyll, which was a mess.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;brew update &amp;amp;&amp;amp; brew install hugo
-hugo new site myBlog
-cd myBlog
-git clone https://github.com/dplesca/purehugo.git themes/purehugo
-echo &amp;quot;theme = purehugo&amp;quot; &amp;gt;&amp;gt; config.toml 
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Creating or customizing themes is beyond the scope of this post, but what we are doing here is &amp;ldquo;installing&amp;rdquo; a pre-baked Hugo theme, and then setting it as our default.&lt;/p&gt;
-
-&lt;h2 id=&#34;hugo-workflow-drafting-publishing-a-post-macos&#34;&gt;Hugo Workflow: Drafting &amp;amp; Publishing a Post (MacOS)&lt;/h2&gt;
-
-&lt;p&gt;In order to create a new post for your blog:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;cd myBlog
-hugo new post/myReviewOfHugo.md
-open content/post/myReviewOfHugo.md # write the post in your text editor
-
-# Optional: launch a local webserver, give it a sec, and preview the blog
-hugo server &amp;amp; sleep 2 &amp;amp;&amp;amp; open http://localhost:1313/blog/
-killall hugo # because we left hugo running in the background there
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;While the server is running, you can actually continue to edit the post in your editor. The server will live update the view in your browser. This is optional, but it will verify that everything will look correct when you publish.&lt;/p&gt;
-
-&lt;p&gt;When you&amp;rsquo;re satisfied, you can generate the actual web content to disk, and publish it. The following steps assume you are using Github Pages, so the publish is made using a &lt;code&gt;git&lt;/code&gt; push.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;# You must already have a GitHub project, and in its settings page, and have set the GitHub pages to &amp;quot;master branch / docs&amp;quot;. In this example, the project name is &amp;quot;blog&amp;quot;.
-
-# These are the one-time Hugo steps:
-echo &amp;quot;publishDir = docs&amp;quot; &amp;gt;&amp;gt; config.toml
-echo &amp;quot;baseURL = https://myname.github.com/blog&amp;quot; &amp;gt;&amp;gt; config.toml
-
-# These are the one-time Git steps:
-rm -rf themes/.git # delete existing git files so they don&#39;t interfere
-git init  # turn this directory into a git repo
-git remote add origin https://github.com/myname/blog.git
-
-# These are the only steps needed every time you publish new content:
-hugo  # this generates HTML + JS + CSS under the publishdir (blog/docs/)
-git add -A
-git commit -m &amp;quot;Add a blog post about whatever.&amp;quot;
-git push
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;That&amp;rsquo;s all there is to it, although you can always use a different Git client if you don&amp;rsquo;t like the command line. I sure as hell don&amp;rsquo;t like it (I use Atlassian Sourcetree) but it&amp;rsquo;s up to you.&lt;/p&gt;
-
-&lt;h2 id=&#34;post-metadata-wtf-is-front-matter&#34;&gt;Post Metadata: WTF is &amp;ldquo;Front Matter&amp;rdquo; ?&lt;/h2&gt;
-
-&lt;p&gt;In each post (each Markdown file), there is some metadata in a header at the top of the file, called &amp;ldquo;front matter.&amp;rdquo; Jekyll was the first to introduce this concept (in name, at least), but it is common across other static generators now. Hugo lets you write front matter in YAML, JSON or TOML (the default). If you&amp;rsquo;ve worked in web development surely you&amp;rsquo;ve heard of JSON, but now you may be asking WTF is YAML and TOML?&lt;/p&gt;
-
-&lt;p&gt;These are syntaxes invented specifically for controlling the settings of static site generators. It seems to be a case of &amp;ldquo;reinventing the wheel&amp;rdquo; of &lt;a href=&#34;https://en.wikipedia.org/wiki/INI_file&#34;&gt;INI files&lt;/a&gt;, which have been around for decades. Basically, a config file. Key-value pairs. Associative array. Hash table (please don&amp;rsquo;t shorten it to just &amp;ldquo;hash,&amp;rdquo; words have meanings, know the difference). Dictionary. They&amp;rsquo;re all basically the same thing. YAML started in 2009 or so, as a minimalist-syntax alternative to JSON, which itself was a minimalist alternative to XML. &lt;a href=&#34;https://en.wikipedia.org/wiki/Comparison_of_data_serialization_formats&#34;&gt;We&amp;rsquo;ll get this right some day&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;The CEO of GitHub and inventor of Jekyll, probably high on the smell of his own farts, in 2013 decided that YAML needed to be even more minimal, and renamed this idea after himself (&amp;ldquo;TOM&amp;rdquo;), and thus was born TOML, which primarily because of the fame of the creator has now spread &lt;a href=&#34;https://github.com/toml-lang/toml#projects-using-toml&#34;&gt;to a few other projects&lt;/a&gt;. Thus, we have minimalized almost all the way back to INI files (except now it has been &amp;ldquo;standardized&amp;rdquo;). Progress.&lt;/p&gt;
-
-&lt;p&gt;Oh and by the way, none of these &lt;em&gt;are actually markup languages at all&lt;/em&gt;. They just aren&amp;rsquo;t. The insistence on propagating the use of the acronym letters -ML for config file formats is basically an inside joke at this point.&lt;/p&gt;
-
-&lt;p&gt;The takeaway for me is that in the mid-2000s it became fashionable to ditch braces and brackets in all syntax for everything, in favor of careful indentation. Thus returning to the fashion of the 1970s and FORTRAN. You know what&amp;rsquo;s popular &lt;em&gt;today&lt;/em&gt;, though? Look at Go, Rust, and Swift. Yea that&amp;rsquo;s right, compiled languages with curly braces are back again. &lt;a href=&#34;https://www.youtube.com/watch?v=sX0CbA4718A&#34;&gt;Urge to kill risinnnnnnng.&lt;/a&gt; All right, deep breaths.&lt;/p&gt;
-
-&lt;p&gt;Anyway, within this &amp;ldquo;front matter,&amp;rdquo; you can define tags and categories, timestamps, and titles for every post. For examplte, the front matter for this post was defined as such:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-toml&#34;&gt;+++
-Tags = [&amp;quot;web&amp;quot;,&amp;quot;blogging&amp;quot;,&amp;quot;Hugo&amp;quot;, &amp;quot;Jekyll&amp;quot;, &amp;quot;YAML&amp;quot;, &amp;quot;TOML&amp;quot;]
-Description = &amp;quot;Initial impressions on the static site generator, Hugo&amp;quot;
-date = &amp;quot;2017-02-03T19:07:12-05:00&amp;quot;
-title = &amp;quot;Hugo, the static site generator&amp;quot;
-Categories = [&amp;quot;web&amp;quot;,&amp;quot;blogging&amp;quot;,&amp;quot;Hugo&amp;quot;]
-+++
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;You can also set optional variables like a publish date in the future (Hugo will not render it to the content directory until this date), or an alias (if you want to forward visitors from another URL to this post instead).&lt;/p&gt;
-
-&lt;p&gt;The configuration file for your Hugo site, &lt;code&gt;config.toml&lt;/code&gt;, is also in this syntax.&lt;/p&gt;
-
-&lt;p&gt;That more or less covers the basics of Hugo, and static site generators like it. My next post will be about Markdown (an &lt;em&gt;actual&lt;/em&gt; markup language).&lt;/p&gt;
-</description>
+      <description>Hugo, a Static Site Generator In my last post, I covered the rationale behind using a static site generator. Static site generators are not just for creating blogs. They can also be used to create online resumes, company sites, online documentation, etc.
+The default choice for static site generator is Jekyll, which has the most support, but it&amp;rsquo;s troublesome to install and use. Hugo is a popular alternative that is easier to install, and faster to work with.</description>
     </item>
     
     <item>
@@ -257,28 +37,8 @@ Categories = [&amp;quot;web&amp;quot;,&amp;quot;blogging&amp;quot;,&amp;quot;Hug
       <pubDate>Fri, 03 Feb 2017 15:43:53 -0500</pubDate>
       
       <guid>https://michael-myers.github.io/blog/post/static-site-generators/</guid>
-      <description>&lt;p&gt;My first blog, back in the early 2000s, was on a hosted blogging platform known as &lt;a href=&#34;https://en.wikipedia.org/wiki/Blogger_(service)&#34;&gt;Blogger&lt;/a&gt;. It was simple and convenient: as the admin you just logged into the Blogger service, edited posts in your browser, and hit publish. This is basically how Tumblr still works today, although Tumblr&amp;rsquo;s innovation was to include media file hosting and allow everyone to repost each others&amp;rsquo; content.&lt;/p&gt;
-
-&lt;p&gt;But Blogger content was &lt;em&gt;static&lt;/em&gt;, and textual. You could post a few paragraphs of text, and embed images if they were hosted elsewhere. Only later did Google buy out the service and integrate it with their photo-hosting service. In the mid-2000s, many geeks wanted more flexibility, like the ability to limit access to members only, integrate their own photo/video/audio collections, and – most importantly – control the appearance of their blog.&lt;/p&gt;
-
-&lt;p&gt;So my second blog was generated with a Web Content Management System (CMS) and self-hosted on a home Windows XP PC running the &amp;ldquo;&lt;a href=&#34;https://en.wikipedia.org/wiki/LAMP_%28software_bundle%29#WAMP&#34;&gt;WAMP&lt;/a&gt;&amp;rdquo; software stack, with a DNS record from a free dynamic DNS service. If you&amp;rsquo;re a system admin or security expert you&amp;rsquo;re probably cringing. I am too. In hindsight, it&amp;rsquo;s a miracle if that PC was not 0wned by a hacker at some point, but at least I have no evidence to believe it was. But I thought my blog was pretty cool, it had a custom look, custom domain name, its own forums, file storage, a weather widget on the sidebar. I believe it was using the &lt;a href=&#34;https://en.wikipedia.org/wiki/Drupal&#34;&gt;Drupal CMS&lt;/a&gt;. The 2000s saw this rise of the &amp;ldquo;web app,&amp;rdquo; a concept that an application was something that ran in a scripting language on a web server and presented you with a web page as the user interface. As a system programmer who thinks an application is a single self-contained compiled binary, I thought this was an anathema. But the rest of the tech world decided otherwise: websites that were not database-backed and server-side-scripted were totally 90s! That meant lame. 90s wasn&amp;rsquo;t cool again yet.&lt;/p&gt;
-
-&lt;p&gt;The reason why the self-hosted CMS approach to blogging is cringey is that it is notoriously difficult to secure a CMS, especially one written in PHP. PHP is now known to be prone to reoccuring security issues because of flaws in its design (unvalidated input, access control problems, command injection issues, etc.), and the use of a SQL database means fighting a war agains SQL injection attacks from anyone who uses your site. Spammers will leave spam comments. You just want to run a blog, but now you&amp;rsquo;re a system admin for a web server, a database admin for a database, and you have to understand the PHP (or Java, or whatever) that generates your site on the fly every time a visitor loads a page. If you ever want to use a web hosting service for your CMS-based site instead of hosting it at home, you have to pay real money, because supporting and securing Apache, PHP, and MySQL is a full-time job! On top of all of that, all of this script and database stuff makes the site is slower to load, and prone to Denial of Service attacks.&lt;/p&gt;
-
-&lt;p&gt;This is no way to live. And so, as is typical, the tech community decided that what is old is new again, and that static sites were actually a good idea that should never have been abandoned. Rolling my eyes so hard I went temporarily blind, I actually resisted even caring about the cool way to blog in the 2010s. I used LiveJournal for a bit. I tried a hosted Wordpress (Wordpress.com) account to blog about game console emulators. I got into using Tumblr, even though (or maybe &lt;em&gt;because&lt;/em&gt;) the tech community is not on there. But now I&amp;rsquo;ve decided to give a fresh look at what&amp;rsquo;s fresh, and give it a chance.&lt;/p&gt;
-
-&lt;p&gt;Here are some things I noticed about the current Preferred Way for Cool Kids to Blog.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;If you write any kind of code for a living, you host it on a free hosting service in the .io TLD. This is just what is fashionable, and like all fashion choices, it can&amp;rsquo;t really be explained. &amp;ldquo;Everyone is doing it&amp;rdquo;, including this blog. We are not all hosting sites in the British Indian Ocean Territory, but yes, this TLD exists because the UK &lt;a href=&#34;https://en.wikipedia.org/wiki/Depopulation_of_Chagossians_from_the_Chagos_Archipelago&#34;&gt;stole some Pacific Islanders&amp;rsquo; land&lt;/a&gt; during the Cold War, and its only other claim to fame might be &lt;a href=&#34;http://content.time.com/time/world/article/0,8599,1828469,00.html&#34;&gt;its black site CIA torture prison&lt;/a&gt;. How&amp;rsquo;s that for oblivious Silicon Valley tech privilege!&lt;/li&gt;
-&lt;li&gt;Because HTML, JS, and CSS are nearly impossible to work in directly anymore (much like assembly code), people write their web page content in a highly simplified markup language, and then run &lt;em&gt;that&lt;/em&gt; through a compiler (oh, sorry, &lt;em&gt;static site generator&lt;/em&gt;) to produce a web site in actual HTML, JS, and CSS. The output is then posted to a web hosting service. There are some &lt;a href=&#34;https://staticsitegenerators.net&#34;&gt;450 static site generators&lt;/a&gt; to choose from. This site uses Hugo, which I&amp;rsquo;ll talk about in a future post. An even more popular choice is Jekyll, which is fine…for me to poop on.&lt;/li&gt;
-&lt;li&gt;The simplified markup language of choice currently is &lt;a href=&#34;https://en.wikipedia.org/wiki/Markdown&#34;&gt;Markdown&lt;/a&gt;, which will also be the subject of a future post because it is pretty neat.&lt;/li&gt;
-&lt;li&gt;Because supporting the ability for visitors to post comments would require a dynamic site, static sites have outsourced this responsibility to third-party services. That is, comments are implemented with an embedded JavaScript element that is loaded from a remote service. The dominant choice of service at the moment is &lt;a href=&#34;https://en.wikipedia.org/wiki/Disqus&#34;&gt;Disqus&lt;/a&gt;. This and any other user-account-based service that embeds its content on your blog is a privacy problem: it means Disqus is basically assigning you an identifier and following you around to all of the Disqus-enabled sites you visit. &lt;a href=&#34;https://www.ghostery.com&#34;&gt;Ghostery&lt;/a&gt; blocks Disqus by default, for this reason. I suggest using Twitter to reach me if you have a comment.&lt;/li&gt;
-&lt;li&gt;Because static sites cannot track how many visitors they get and where they visited from, that too has been outsourced. &lt;a href=&#34;https://en.wikipedia.org/wiki/Google_Analytics&#34;&gt;Google Analytics&lt;/a&gt; is now more prevalent than HPV and herpes combined. I have had to delete it out of every web-related code repository that I have borrowed to make anything. Even if I&amp;rsquo;m the last one on Earth who cares about privacy, I will not be including that here. The same goes for social media sharing links. You&amp;rsquo;re a big boy and/or girl, I bet you&amp;rsquo;ll figure out how to share a URL yourself!&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;So there you have it, my take on the Way to Blog in the 2010s for Cool Kids. Thanks for reading. – MM&lt;/p&gt;
-</description>
+      <description>My first blog, back in the early 2000s, was on a hosted blogging platform known as Blogger. It was simple and convenient: as the admin you just logged into the Blogger service, edited posts in your browser, and hit publish. This is basically how Tumblr still works today, although Tumblr&amp;rsquo;s innovation was to include media file hosting and allow everyone to repost each others&amp;rsquo; content.
+But Blogger content was static, and textual.</description>
     </item>
     
   </channel>

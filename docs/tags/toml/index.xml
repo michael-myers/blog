@@ -2,11 +2,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Toml on Mike&#39;s Blog</title>
-    <link>https://michael-myers.github.io/blog/tags/toml/index.xml</link>
+    <link>https://michael-myers.github.io/blog/tags/toml/</link>
     <description>Recent content in Toml on Mike&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <atom:link href="https://michael-myers.github.io/blog/tags/toml/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 03 Feb 2017 19:07:12 -0500</lastBuildDate>
+    
+	<atom:link href="https://michael-myers.github.io/blog/tags/toml/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Hugo, the static site generator</title>
@@ -14,93 +17,8 @@
       <pubDate>Fri, 03 Feb 2017 19:07:12 -0500</pubDate>
       
       <guid>https://michael-myers.github.io/blog/post/hugo/</guid>
-      <description>
-
-&lt;h2 id=&#34;hugo-a-static-site-generator&#34;&gt;Hugo, a Static Site Generator&lt;/h2&gt;
-
-&lt;p&gt;In my last post, I covered the rationale behind using a static site generator. Static site generators are not just for creating blogs. They can also be used to create online resumes, company sites, online documentation, etc.&lt;/p&gt;
-
-&lt;p&gt;The default choice for static site generator is Jekyll, which has the most support, but it&amp;rsquo;s troublesome to install and use. Hugo is a popular alternative that is easier to install, and faster to work with. It&amp;rsquo;s implemented in Golang, a.k.a. Go. This means it is written in a statically compiled language (The Best Kind) and is &lt;em&gt;completely dependency free.&lt;/em&gt; Dependency hell is the bane of my existence. It&amp;rsquo;s like work that you have to do before you can start working. Anyway, let&amp;rsquo;s look at how to get started.&lt;/p&gt;
-
-&lt;h2 id=&#34;hugo-install-process-macos&#34;&gt;Hugo Install Process (MacOS)&lt;/h2&gt;
-
-&lt;p&gt;This is so simple, and its simplicity is the reason why I went with Hugo after trying the more popular Jekyll, which was a mess.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;brew update &amp;amp;&amp;amp; brew install hugo
-hugo new site myBlog
-cd myBlog
-git clone https://github.com/dplesca/purehugo.git themes/purehugo
-echo &amp;quot;theme = purehugo&amp;quot; &amp;gt;&amp;gt; config.toml 
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Creating or customizing themes is beyond the scope of this post, but what we are doing here is &amp;ldquo;installing&amp;rdquo; a pre-baked Hugo theme, and then setting it as our default.&lt;/p&gt;
-
-&lt;h2 id=&#34;hugo-workflow-drafting-publishing-a-post-macos&#34;&gt;Hugo Workflow: Drafting &amp;amp; Publishing a Post (MacOS)&lt;/h2&gt;
-
-&lt;p&gt;In order to create a new post for your blog:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;cd myBlog
-hugo new post/myReviewOfHugo.md
-open content/post/myReviewOfHugo.md # write the post in your text editor
-
-# Optional: launch a local webserver, give it a sec, and preview the blog
-hugo server &amp;amp; sleep 2 &amp;amp;&amp;amp; open http://localhost:1313/blog/
-killall hugo # because we left hugo running in the background there
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;While the server is running, you can actually continue to edit the post in your editor. The server will live update the view in your browser. This is optional, but it will verify that everything will look correct when you publish.&lt;/p&gt;
-
-&lt;p&gt;When you&amp;rsquo;re satisfied, you can generate the actual web content to disk, and publish it. The following steps assume you are using Github Pages, so the publish is made using a &lt;code&gt;git&lt;/code&gt; push.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;# You must already have a GitHub project, and in its settings page, and have set the GitHub pages to &amp;quot;master branch / docs&amp;quot;. In this example, the project name is &amp;quot;blog&amp;quot;.
-
-# These are the one-time Hugo steps:
-echo &amp;quot;publishDir = docs&amp;quot; &amp;gt;&amp;gt; config.toml
-echo &amp;quot;baseURL = https://myname.github.com/blog&amp;quot; &amp;gt;&amp;gt; config.toml
-
-# These are the one-time Git steps:
-rm -rf themes/.git # delete existing git files so they don&#39;t interfere
-git init  # turn this directory into a git repo
-git remote add origin https://github.com/myname/blog.git
-
-# These are the only steps needed every time you publish new content:
-hugo  # this generates HTML + JS + CSS under the publishdir (blog/docs/)
-git add -A
-git commit -m &amp;quot;Add a blog post about whatever.&amp;quot;
-git push
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;That&amp;rsquo;s all there is to it, although you can always use a different Git client if you don&amp;rsquo;t like the command line. I sure as hell don&amp;rsquo;t like it (I use Atlassian Sourcetree) but it&amp;rsquo;s up to you.&lt;/p&gt;
-
-&lt;h2 id=&#34;post-metadata-wtf-is-front-matter&#34;&gt;Post Metadata: WTF is &amp;ldquo;Front Matter&amp;rdquo; ?&lt;/h2&gt;
-
-&lt;p&gt;In each post (each Markdown file), there is some metadata in a header at the top of the file, called &amp;ldquo;front matter.&amp;rdquo; Jekyll was the first to introduce this concept (in name, at least), but it is common across other static generators now. Hugo lets you write front matter in YAML, JSON or TOML (the default). If you&amp;rsquo;ve worked in web development surely you&amp;rsquo;ve heard of JSON, but now you may be asking WTF is YAML and TOML?&lt;/p&gt;
-
-&lt;p&gt;These are syntaxes invented specifically for controlling the settings of static site generators. It seems to be a case of &amp;ldquo;reinventing the wheel&amp;rdquo; of &lt;a href=&#34;https://en.wikipedia.org/wiki/INI_file&#34;&gt;INI files&lt;/a&gt;, which have been around for decades. Basically, a config file. Key-value pairs. Associative array. Hash table (please don&amp;rsquo;t shorten it to just &amp;ldquo;hash,&amp;rdquo; words have meanings, know the difference). Dictionary. They&amp;rsquo;re all basically the same thing. YAML started in 2009 or so, as a minimalist-syntax alternative to JSON, which itself was a minimalist alternative to XML. &lt;a href=&#34;https://en.wikipedia.org/wiki/Comparison_of_data_serialization_formats&#34;&gt;We&amp;rsquo;ll get this right some day&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;The CEO of GitHub and inventor of Jekyll, probably high on the smell of his own farts, in 2013 decided that YAML needed to be even more minimal, and renamed this idea after himself (&amp;ldquo;TOM&amp;rdquo;), and thus was born TOML, which primarily because of the fame of the creator has now spread &lt;a href=&#34;https://github.com/toml-lang/toml#projects-using-toml&#34;&gt;to a few other projects&lt;/a&gt;. Thus, we have minimalized almost all the way back to INI files (except now it has been &amp;ldquo;standardized&amp;rdquo;). Progress.&lt;/p&gt;
-
-&lt;p&gt;Oh and by the way, none of these &lt;em&gt;are actually markup languages at all&lt;/em&gt;. They just aren&amp;rsquo;t. The insistence on propagating the use of the acronym letters -ML for config file formats is basically an inside joke at this point.&lt;/p&gt;
-
-&lt;p&gt;The takeaway for me is that in the mid-2000s it became fashionable to ditch braces and brackets in all syntax for everything, in favor of careful indentation. Thus returning to the fashion of the 1970s and FORTRAN. You know what&amp;rsquo;s popular &lt;em&gt;today&lt;/em&gt;, though? Look at Go, Rust, and Swift. Yea that&amp;rsquo;s right, compiled languages with curly braces are back again. &lt;a href=&#34;https://www.youtube.com/watch?v=sX0CbA4718A&#34;&gt;Urge to kill risinnnnnnng.&lt;/a&gt; All right, deep breaths.&lt;/p&gt;
-
-&lt;p&gt;Anyway, within this &amp;ldquo;front matter,&amp;rdquo; you can define tags and categories, timestamps, and titles for every post. For examplte, the front matter for this post was defined as such:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-toml&#34;&gt;+++
-Tags = [&amp;quot;web&amp;quot;,&amp;quot;blogging&amp;quot;,&amp;quot;Hugo&amp;quot;, &amp;quot;Jekyll&amp;quot;, &amp;quot;YAML&amp;quot;, &amp;quot;TOML&amp;quot;]
-Description = &amp;quot;Initial impressions on the static site generator, Hugo&amp;quot;
-date = &amp;quot;2017-02-03T19:07:12-05:00&amp;quot;
-title = &amp;quot;Hugo, the static site generator&amp;quot;
-Categories = [&amp;quot;web&amp;quot;,&amp;quot;blogging&amp;quot;,&amp;quot;Hugo&amp;quot;]
-+++
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;You can also set optional variables like a publish date in the future (Hugo will not render it to the content directory until this date), or an alias (if you want to forward visitors from another URL to this post instead).&lt;/p&gt;
-
-&lt;p&gt;The configuration file for your Hugo site, &lt;code&gt;config.toml&lt;/code&gt;, is also in this syntax.&lt;/p&gt;
-
-&lt;p&gt;That more or less covers the basics of Hugo, and static site generators like it. My next post will be about Markdown (an &lt;em&gt;actual&lt;/em&gt; markup language).&lt;/p&gt;
-</description>
+      <description>Hugo, a Static Site Generator In my last post, I covered the rationale behind using a static site generator. Static site generators are not just for creating blogs. They can also be used to create online resumes, company sites, online documentation, etc.
+The default choice for static site generator is Jekyll, which has the most support, but it&amp;rsquo;s troublesome to install and use. Hugo is a popular alternative that is easier to install, and faster to work with.</description>
     </item>
     
   </channel>

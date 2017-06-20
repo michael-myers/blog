@@ -2,11 +2,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Web on Mike&#39;s Blog</title>
-    <link>https://michael-myers.github.io/blog/categories/web/index.xml</link>
+    <link>https://michael-myers.github.io/blog/categories/web/</link>
     <description>Recent content in Web on Mike&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <atom:link href="https://michael-myers.github.io/blog/categories/web/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 03 Feb 2017 19:07:12 -0500</lastBuildDate>
+    
+	<atom:link href="https://michael-myers.github.io/blog/categories/web/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Hugo, the static site generator</title>
@@ -14,93 +17,8 @@
       <pubDate>Fri, 03 Feb 2017 19:07:12 -0500</pubDate>
       
       <guid>https://michael-myers.github.io/blog/post/hugo/</guid>
-      <description>
-
-&lt;h2 id=&#34;hugo-a-static-site-generator&#34;&gt;Hugo, a Static Site Generator&lt;/h2&gt;
-
-&lt;p&gt;In my last post, I covered the rationale behind using a static site generator. Static site generators are not just for creating blogs. They can also be used to create online resumes, company sites, online documentation, etc.&lt;/p&gt;
-
-&lt;p&gt;The default choice for static site generator is Jekyll, which has the most support, but it&amp;rsquo;s troublesome to install and use. Hugo is a popular alternative that is easier to install, and faster to work with. It&amp;rsquo;s implemented in Golang, a.k.a. Go. This means it is written in a statically compiled language (The Best Kind) and is &lt;em&gt;completely dependency free.&lt;/em&gt; Dependency hell is the bane of my existence. It&amp;rsquo;s like work that you have to do before you can start working. Anyway, let&amp;rsquo;s look at how to get started.&lt;/p&gt;
-
-&lt;h2 id=&#34;hugo-install-process-macos&#34;&gt;Hugo Install Process (MacOS)&lt;/h2&gt;
-
-&lt;p&gt;This is so simple, and its simplicity is the reason why I went with Hugo after trying the more popular Jekyll, which was a mess.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;brew update &amp;amp;&amp;amp; brew install hugo
-hugo new site myBlog
-cd myBlog
-git clone https://github.com/dplesca/purehugo.git themes/purehugo
-echo &amp;quot;theme = purehugo&amp;quot; &amp;gt;&amp;gt; config.toml 
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Creating or customizing themes is beyond the scope of this post, but what we are doing here is &amp;ldquo;installing&amp;rdquo; a pre-baked Hugo theme, and then setting it as our default.&lt;/p&gt;
-
-&lt;h2 id=&#34;hugo-workflow-drafting-publishing-a-post-macos&#34;&gt;Hugo Workflow: Drafting &amp;amp; Publishing a Post (MacOS)&lt;/h2&gt;
-
-&lt;p&gt;In order to create a new post for your blog:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;cd myBlog
-hugo new post/myReviewOfHugo.md
-open content/post/myReviewOfHugo.md # write the post in your text editor
-
-# Optional: launch a local webserver, give it a sec, and preview the blog
-hugo server &amp;amp; sleep 2 &amp;amp;&amp;amp; open http://localhost:1313/blog/
-killall hugo # because we left hugo running in the background there
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;While the server is running, you can actually continue to edit the post in your editor. The server will live update the view in your browser. This is optional, but it will verify that everything will look correct when you publish.&lt;/p&gt;
-
-&lt;p&gt;When you&amp;rsquo;re satisfied, you can generate the actual web content to disk, and publish it. The following steps assume you are using Github Pages, so the publish is made using a &lt;code&gt;git&lt;/code&gt; push.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;# You must already have a GitHub project, and in its settings page, and have set the GitHub pages to &amp;quot;master branch / docs&amp;quot;. In this example, the project name is &amp;quot;blog&amp;quot;.
-
-# These are the one-time Hugo steps:
-echo &amp;quot;publishDir = docs&amp;quot; &amp;gt;&amp;gt; config.toml
-echo &amp;quot;baseURL = https://myname.github.com/blog&amp;quot; &amp;gt;&amp;gt; config.toml
-
-# These are the one-time Git steps:
-rm -rf themes/.git # delete existing git files so they don&#39;t interfere
-git init  # turn this directory into a git repo
-git remote add origin https://github.com/myname/blog.git
-
-# These are the only steps needed every time you publish new content:
-hugo  # this generates HTML + JS + CSS under the publishdir (blog/docs/)
-git add -A
-git commit -m &amp;quot;Add a blog post about whatever.&amp;quot;
-git push
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;That&amp;rsquo;s all there is to it, although you can always use a different Git client if you don&amp;rsquo;t like the command line. I sure as hell don&amp;rsquo;t like it (I use Atlassian Sourcetree) but it&amp;rsquo;s up to you.&lt;/p&gt;
-
-&lt;h2 id=&#34;post-metadata-wtf-is-front-matter&#34;&gt;Post Metadata: WTF is &amp;ldquo;Front Matter&amp;rdquo; ?&lt;/h2&gt;
-
-&lt;p&gt;In each post (each Markdown file), there is some metadata in a header at the top of the file, called &amp;ldquo;front matter.&amp;rdquo; Jekyll was the first to introduce this concept (in name, at least), but it is common across other static generators now. Hugo lets you write front matter in YAML, JSON or TOML (the default). If you&amp;rsquo;ve worked in web development surely you&amp;rsquo;ve heard of JSON, but now you may be asking WTF is YAML and TOML?&lt;/p&gt;
-
-&lt;p&gt;These are syntaxes invented specifically for controlling the settings of static site generators. It seems to be a case of &amp;ldquo;reinventing the wheel&amp;rdquo; of &lt;a href=&#34;https://en.wikipedia.org/wiki/INI_file&#34;&gt;INI files&lt;/a&gt;, which have been around for decades. Basically, a config file. Key-value pairs. Associative array. Hash table (please don&amp;rsquo;t shorten it to just &amp;ldquo;hash,&amp;rdquo; words have meanings, know the difference). Dictionary. They&amp;rsquo;re all basically the same thing. YAML started in 2009 or so, as a minimalist-syntax alternative to JSON, which itself was a minimalist alternative to XML. &lt;a href=&#34;https://en.wikipedia.org/wiki/Comparison_of_data_serialization_formats&#34;&gt;We&amp;rsquo;ll get this right some day&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;The CEO of GitHub and inventor of Jekyll, probably high on the smell of his own farts, in 2013 decided that YAML needed to be even more minimal, and renamed this idea after himself (&amp;ldquo;TOM&amp;rdquo;), and thus was born TOML, which primarily because of the fame of the creator has now spread &lt;a href=&#34;https://github.com/toml-lang/toml#projects-using-toml&#34;&gt;to a few other projects&lt;/a&gt;. Thus, we have minimalized almost all the way back to INI files (except now it has been &amp;ldquo;standardized&amp;rdquo;). Progress.&lt;/p&gt;
-
-&lt;p&gt;Oh and by the way, none of these &lt;em&gt;are actually markup languages at all&lt;/em&gt;. They just aren&amp;rsquo;t. The insistence on propagating the use of the acronym letters -ML for config file formats is basically an inside joke at this point.&lt;/p&gt;
-
-&lt;p&gt;The takeaway for me is that in the mid-2000s it became fashionable to ditch braces and brackets in all syntax for everything, in favor of careful indentation. Thus returning to the fashion of the 1970s and FORTRAN. You know what&amp;rsquo;s popular &lt;em&gt;today&lt;/em&gt;, though? Look at Go, Rust, and Swift. Yea that&amp;rsquo;s right, compiled languages with curly braces are back again. &lt;a href=&#34;https://www.youtube.com/watch?v=sX0CbA4718A&#34;&gt;Urge to kill risinnnnnnng.&lt;/a&gt; All right, deep breaths.&lt;/p&gt;
-
-&lt;p&gt;Anyway, within this &amp;ldquo;front matter,&amp;rdquo; you can define tags and categories, timestamps, and titles for every post. For examplte, the front matter for this post was defined as such:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-toml&#34;&gt;+++
-Tags = [&amp;quot;web&amp;quot;,&amp;quot;blogging&amp;quot;,&amp;quot;Hugo&amp;quot;, &amp;quot;Jekyll&amp;quot;, &amp;quot;YAML&amp;quot;, &amp;quot;TOML&amp;quot;]
-Description = &amp;quot;Initial impressions on the static site generator, Hugo&amp;quot;
-date = &amp;quot;2017-02-03T19:07:12-05:00&amp;quot;
-title = &amp;quot;Hugo, the static site generator&amp;quot;
-Categories = [&amp;quot;web&amp;quot;,&amp;quot;blogging&amp;quot;,&amp;quot;Hugo&amp;quot;]
-+++
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;You can also set optional variables like a publish date in the future (Hugo will not render it to the content directory until this date), or an alias (if you want to forward visitors from another URL to this post instead).&lt;/p&gt;
-
-&lt;p&gt;The configuration file for your Hugo site, &lt;code&gt;config.toml&lt;/code&gt;, is also in this syntax.&lt;/p&gt;
-
-&lt;p&gt;That more or less covers the basics of Hugo, and static site generators like it. My next post will be about Markdown (an &lt;em&gt;actual&lt;/em&gt; markup language).&lt;/p&gt;
-</description>
+      <description>Hugo, a Static Site Generator In my last post, I covered the rationale behind using a static site generator. Static site generators are not just for creating blogs. They can also be used to create online resumes, company sites, online documentation, etc.
+The default choice for static site generator is Jekyll, which has the most support, but it&amp;rsquo;s troublesome to install and use. Hugo is a popular alternative that is easier to install, and faster to work with.</description>
     </item>
     
     <item>
@@ -109,28 +27,8 @@ Categories = [&amp;quot;web&amp;quot;,&amp;quot;blogging&amp;quot;,&amp;quot;Hug
       <pubDate>Fri, 03 Feb 2017 15:43:53 -0500</pubDate>
       
       <guid>https://michael-myers.github.io/blog/post/static-site-generators/</guid>
-      <description>&lt;p&gt;My first blog, back in the early 2000s, was on a hosted blogging platform known as &lt;a href=&#34;https://en.wikipedia.org/wiki/Blogger_(service)&#34;&gt;Blogger&lt;/a&gt;. It was simple and convenient: as the admin you just logged into the Blogger service, edited posts in your browser, and hit publish. This is basically how Tumblr still works today, although Tumblr&amp;rsquo;s innovation was to include media file hosting and allow everyone to repost each others&amp;rsquo; content.&lt;/p&gt;
-
-&lt;p&gt;But Blogger content was &lt;em&gt;static&lt;/em&gt;, and textual. You could post a few paragraphs of text, and embed images if they were hosted elsewhere. Only later did Google buy out the service and integrate it with their photo-hosting service. In the mid-2000s, many geeks wanted more flexibility, like the ability to limit access to members only, integrate their own photo/video/audio collections, and – most importantly – control the appearance of their blog.&lt;/p&gt;
-
-&lt;p&gt;So my second blog was generated with a Web Content Management System (CMS) and self-hosted on a home Windows XP PC running the &amp;ldquo;&lt;a href=&#34;https://en.wikipedia.org/wiki/LAMP_%28software_bundle%29#WAMP&#34;&gt;WAMP&lt;/a&gt;&amp;rdquo; software stack, with a DNS record from a free dynamic DNS service. If you&amp;rsquo;re a system admin or security expert you&amp;rsquo;re probably cringing. I am too. In hindsight, it&amp;rsquo;s a miracle if that PC was not 0wned by a hacker at some point, but at least I have no evidence to believe it was. But I thought my blog was pretty cool, it had a custom look, custom domain name, its own forums, file storage, a weather widget on the sidebar. I believe it was using the &lt;a href=&#34;https://en.wikipedia.org/wiki/Drupal&#34;&gt;Drupal CMS&lt;/a&gt;. The 2000s saw this rise of the &amp;ldquo;web app,&amp;rdquo; a concept that an application was something that ran in a scripting language on a web server and presented you with a web page as the user interface. As a system programmer who thinks an application is a single self-contained compiled binary, I thought this was an anathema. But the rest of the tech world decided otherwise: websites that were not database-backed and server-side-scripted were totally 90s! That meant lame. 90s wasn&amp;rsquo;t cool again yet.&lt;/p&gt;
-
-&lt;p&gt;The reason why the self-hosted CMS approach to blogging is cringey is that it is notoriously difficult to secure a CMS, especially one written in PHP. PHP is now known to be prone to reoccuring security issues because of flaws in its design (unvalidated input, access control problems, command injection issues, etc.), and the use of a SQL database means fighting a war agains SQL injection attacks from anyone who uses your site. Spammers will leave spam comments. You just want to run a blog, but now you&amp;rsquo;re a system admin for a web server, a database admin for a database, and you have to understand the PHP (or Java, or whatever) that generates your site on the fly every time a visitor loads a page. If you ever want to use a web hosting service for your CMS-based site instead of hosting it at home, you have to pay real money, because supporting and securing Apache, PHP, and MySQL is a full-time job! On top of all of that, all of this script and database stuff makes the site is slower to load, and prone to Denial of Service attacks.&lt;/p&gt;
-
-&lt;p&gt;This is no way to live. And so, as is typical, the tech community decided that what is old is new again, and that static sites were actually a good idea that should never have been abandoned. Rolling my eyes so hard I went temporarily blind, I actually resisted even caring about the cool way to blog in the 2010s. I used LiveJournal for a bit. I tried a hosted Wordpress (Wordpress.com) account to blog about game console emulators. I got into using Tumblr, even though (or maybe &lt;em&gt;because&lt;/em&gt;) the tech community is not on there. But now I&amp;rsquo;ve decided to give a fresh look at what&amp;rsquo;s fresh, and give it a chance.&lt;/p&gt;
-
-&lt;p&gt;Here are some things I noticed about the current Preferred Way for Cool Kids to Blog.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;If you write any kind of code for a living, you host it on a free hosting service in the .io TLD. This is just what is fashionable, and like all fashion choices, it can&amp;rsquo;t really be explained. &amp;ldquo;Everyone is doing it&amp;rdquo;, including this blog. We are not all hosting sites in the British Indian Ocean Territory, but yes, this TLD exists because the UK &lt;a href=&#34;https://en.wikipedia.org/wiki/Depopulation_of_Chagossians_from_the_Chagos_Archipelago&#34;&gt;stole some Pacific Islanders&amp;rsquo; land&lt;/a&gt; during the Cold War, and its only other claim to fame might be &lt;a href=&#34;http://content.time.com/time/world/article/0,8599,1828469,00.html&#34;&gt;its black site CIA torture prison&lt;/a&gt;. How&amp;rsquo;s that for oblivious Silicon Valley tech privilege!&lt;/li&gt;
-&lt;li&gt;Because HTML, JS, and CSS are nearly impossible to work in directly anymore (much like assembly code), people write their web page content in a highly simplified markup language, and then run &lt;em&gt;that&lt;/em&gt; through a compiler (oh, sorry, &lt;em&gt;static site generator&lt;/em&gt;) to produce a web site in actual HTML, JS, and CSS. The output is then posted to a web hosting service. There are some &lt;a href=&#34;https://staticsitegenerators.net&#34;&gt;450 static site generators&lt;/a&gt; to choose from. This site uses Hugo, which I&amp;rsquo;ll talk about in a future post. An even more popular choice is Jekyll, which is fine…for me to poop on.&lt;/li&gt;
-&lt;li&gt;The simplified markup language of choice currently is &lt;a href=&#34;https://en.wikipedia.org/wiki/Markdown&#34;&gt;Markdown&lt;/a&gt;, which will also be the subject of a future post because it is pretty neat.&lt;/li&gt;
-&lt;li&gt;Because supporting the ability for visitors to post comments would require a dynamic site, static sites have outsourced this responsibility to third-party services. That is, comments are implemented with an embedded JavaScript element that is loaded from a remote service. The dominant choice of service at the moment is &lt;a href=&#34;https://en.wikipedia.org/wiki/Disqus&#34;&gt;Disqus&lt;/a&gt;. This and any other user-account-based service that embeds its content on your blog is a privacy problem: it means Disqus is basically assigning you an identifier and following you around to all of the Disqus-enabled sites you visit. &lt;a href=&#34;https://www.ghostery.com&#34;&gt;Ghostery&lt;/a&gt; blocks Disqus by default, for this reason. I suggest using Twitter to reach me if you have a comment.&lt;/li&gt;
-&lt;li&gt;Because static sites cannot track how many visitors they get and where they visited from, that too has been outsourced. &lt;a href=&#34;https://en.wikipedia.org/wiki/Google_Analytics&#34;&gt;Google Analytics&lt;/a&gt; is now more prevalent than HPV and herpes combined. I have had to delete it out of every web-related code repository that I have borrowed to make anything. Even if I&amp;rsquo;m the last one on Earth who cares about privacy, I will not be including that here. The same goes for social media sharing links. You&amp;rsquo;re a big boy and/or girl, I bet you&amp;rsquo;ll figure out how to share a URL yourself!&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;So there you have it, my take on the Way to Blog in the 2010s for Cool Kids. Thanks for reading. – MM&lt;/p&gt;
-</description>
+      <description>My first blog, back in the early 2000s, was on a hosted blogging platform known as Blogger. It was simple and convenient: as the admin you just logged into the Blogger service, edited posts in your browser, and hit publish. This is basically how Tumblr still works today, although Tumblr&amp;rsquo;s innovation was to include media file hosting and allow everyone to repost each others&amp;rsquo; content.
+But Blogger content was static, and textual.</description>
     </item>
     
   </channel>
