@@ -3,8 +3,8 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://michael-myers.github.io/blog/post/icloudkeychain/</loc>
-    <lastmod>2017-05-10T14:19:51-04:00</lastmod>
+    <loc>https://michael-myers.github.io/blog/post/ctf-forensics-field-guide/</loc>
+    <lastmod>2017-06-19T21:49:47-04:00</lastmod>
   </url>
   
   <url>
@@ -125,13 +125,13 @@
   
   <url>
     <loc>https://michael-myers.github.io/blog/tags/ctf/</loc>
-    <lastmod>2017-02-12T17:52:54-05:00</lastmod>
+    <lastmod>2017-06-19T21:49:47-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://michael-myers.github.io/blog/categories/ctf/</loc>
-    <lastmod>2017-02-12T17:52:54-05:00</lastmod>
+    <lastmod>2017-06-19T21:49:47-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -162,6 +162,18 @@
   <url>
     <loc>https://michael-myers.github.io/blog/categories/exploitation/</loc>
     <lastmod>2017-02-12T17:52:54-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://michael-myers.github.io/blog/tags/forensics/</loc>
+    <lastmod>2017-06-19T21:49:47-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://michael-myers.github.io/blog/categories/forensics/</loc>
+    <lastmod>2017-06-19T21:49:47-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -215,13 +227,13 @@
   
   <url>
     <loc>https://michael-myers.github.io/blog/</loc>
-    <lastmod>2017-05-10T14:19:51-04:00</lastmod>
+    <lastmod>2017-06-19T21:49:47-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://michael-myers.github.io/blog/post/</loc>
-    <lastmod>2017-05-10T14:19:51-04:00</lastmod>
+    <lastmod>2017-06-19T21:49:47-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -263,13 +275,13 @@
   
   <url>
     <loc>https://michael-myers.github.io/blog/tags/security/</loc>
-    <lastmod>2017-02-27T13:06:16-05:00</lastmod>
+    <lastmod>2017-06-19T21:49:47-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://michael-myers.github.io/blog/categories/security/</loc>
-    <lastmod>2017-02-27T13:06:16-05:00</lastmod>
+    <lastmod>2017-06-19T21:49:47-04:00</lastmod>
     <priority>0</priority>
   </url>
   

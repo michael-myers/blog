@@ -50,7 +50,7 @@
     <item>
       <title>Ctf</title>
       <link>https://michael-myers.github.io/blog/categories/ctf/</link>
-      <pubDate>Sun, 12 Feb 2017 17:52:54 -0500</pubDate>
+      <pubDate>Mon, 19 Jun 2017 21:49:47 -0400</pubDate>
       
       <guid>https://michael-myers.github.io/blog/categories/ctf/</guid>
       <description></description>
@@ -62,6 +62,15 @@
       <pubDate>Sun, 12 Feb 2017 17:52:54 -0500</pubDate>
       
       <guid>https://michael-myers.github.io/blog/categories/exploitation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Forensics</title>
+      <link>https://michael-myers.github.io/blog/categories/forensics/</link>
+      <pubDate>Mon, 19 Jun 2017 21:49:47 -0400</pubDate>
+      
+      <guid>https://michael-myers.github.io/blog/categories/forensics/</guid>
       <description></description>
     </item>
     
@@ -113,7 +122,7 @@
     <item>
       <title>Security</title>
       <link>https://michael-myers.github.io/blog/categories/security/</link>
-      <pubDate>Mon, 27 Feb 2017 13:06:16 -0500</pubDate>
+      <pubDate>Mon, 19 Jun 2017 21:49:47 -0400</pubDate>
       
       <guid>https://michael-myers.github.io/blog/categories/security/</guid>
       <description></description>

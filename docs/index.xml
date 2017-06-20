@@ -6,18 +6,19 @@
     <description>Recent content on Mike&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 10 May 2017 14:19:51 -0400</lastBuildDate>
+    <lastBuildDate>Mon, 19 Jun 2017 21:49:47 -0400</lastBuildDate>
     
 	<atom:link href="https://michael-myers.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>iCloudKeychain</title>
-      <link>https://michael-myers.github.io/blog/post/icloudkeychain/</link>
-      <pubDate>Wed, 10 May 2017 14:19:51 -0400</pubDate>
+      <title>CTF Forensics Field Guide</title>
+      <link>https://michael-myers.github.io/blog/post/ctf-forensics-field-guide/</link>
+      <pubDate>Mon, 19 Jun 2017 21:49:47 -0400</pubDate>
       
-      <guid>https://michael-myers.github.io/blog/post/icloudkeychain/</guid>
-      <description></description>
+      <guid>https://michael-myers.github.io/blog/post/ctf-forensics-field-guide/</guid>
+      <description>Note: this post was also submitted as a chapter to the CTF field guide.
+Forensics In a CTF context, &amp;ldquo;Forensics&amp;rdquo; challenges can include file format analysis, steganography, memory dump analysis, or network packet capture analysis. Any challenge to examine and process a hidden piece of information out of static data files (as opposed to executable programs or remote servers) could be considered a Forensics challenge (unless it involves cryptography, in which case it probably belongs in the Crypto category).</description>
     </item>
     
     <item>
